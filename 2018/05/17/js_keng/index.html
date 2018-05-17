@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="小前端的小笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨欣舰的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="ES6小坑1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用function test (arg = 100) {     console.log(num) }  test(0) =&amp;gt; 0test() =&amp;gt; 100test(200) =&amp;gt; 200    相对于ES5，arg = arg || 100这样设置参数默认值的时候，传入0时，就会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS常见的‘坑’">
+<meta property="og:url" content="http://yoursite.com/2018/05/17/js_keng/index.html">
 <meta property="og:site_name" content="杨欣舰的博客">
-<meta property="og:description" content="小前端的小笔记">
+<meta property="og:description" content="ES6小坑1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用function test (arg = 100) {     console.log(num) }  test(0) =&amp;gt; 0test() =&amp;gt; 100test(200) =&amp;gt; 200    相对于ES5，arg = arg || 100这样设置参数默认值的时候，传入0时，就会">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-17T03:55:42.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杨欣舰的博客">
-<meta name="twitter:description" content="小前端的小笔记">
+<meta name="twitter:title" content="JS常见的‘坑’">
+<meta name="twitter:description" content="ES6小坑1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用function test (arg = 100) {     console.log(num) }  test(0) =&amp;gt; 0test() =&amp;gt; 100test(200) =&amp;gt; 200    相对于ES5，arg = arg || 100这样设置参数默认值的时候，传入0时，就会">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/17/js_keng/"/>
 
 
 
 
 
-  <title>杨欣舰的博客</title>
+  <title>JS常见的‘坑’ | 杨欣舰的博客</title>
   
 
 
@@ -143,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,9 +271,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -303,9 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/17/js_keng/" itemprop="url">JS常见的‘坑’</a></h1>
+          <h1 class="post-title" itemprop="name headline">JS常见的‘坑’</h1>
         
 
         <div class="post-meta">
@@ -386,9 +384,7 @@
       
 
       
-        
-          
-            <h2 id="ES6小坑"><a href="#ES6小坑" class="headerlink" title="ES6小坑"></a>ES6小坑</h2><h3 id="1-ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用"><a href="#1-ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用" class="headerlink" title="1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用"></a>1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用</h3><pre><code>function test (arg = 100) {
+        <h2 id="ES6小坑"><a href="#ES6小坑" class="headerlink" title="ES6小坑"></a>ES6小坑</h2><h3 id="1-ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用"><a href="#1-ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用" class="headerlink" title="1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用"></a>1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用</h3><pre><code>function test (arg = 100) {
     console.log(num)
 }
 </code></pre><blockquote>
@@ -457,8 +453,6 @@ console.log(5)
 </ul>
 </blockquote>
 
-          
-        
       
     </div>
     
@@ -475,239 +469,28 @@ console.log(5)
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sunny Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨欣舰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/15/test/" itemprop="url">搭建属于你的专属博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">创建于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-15T15:58:58+08:00">
-                2018-05-15
-              </time>
+              <a href="/2018/05/15/test/" rel="next" title="搭建属于你的专属博客">
+                <i class="fa fa-chevron-left"></i> 搭建属于你的专属博客
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  689
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="第一步：安装以及运行"><a href="#第一步：安装以及运行" class="headerlink" title="第一步：安装以及运行"></a>第一步：安装以及运行</h3><h4 id="1-安装git以及node环境（官网下载即可）"><a href="#1-安装git以及node环境（官网下载即可）" class="headerlink" title="1.安装git以及node环境（官网下载即可）"></a>1.安装git以及node环境（官网下载即可）</h4><h4 id="2-在node的环境下安装hexo"><a href="#2-在node的环境下安装hexo" class="headerlink" title="2.在node的环境下安装hexo"></a>2.在node的环境下安装hexo</h4><ul>
-<li>cnpm install -g hexo-cli</li>
-<li>cnpm install -g hexo</li>
-<li>hexo -v 检验是否安装成功</li>
-</ul>
-<h4 id="3-本地创建放置博客文章文件并与github相连接"><a href="#3-本地创建放置博客文章文件并与github相连接" class="headerlink" title="3.本地创建放置博客文章文件并与github相连接"></a>3.本地创建放置博客文章文件并与github相连接</h4><ul>
-<li>mkdir 文件夹名字 （创建文件夹）</li>
-<li>cd 文件夹名字 （进入文件夹）</li>
-<li>hexo init （初始化）</li>
-<li>cnpm install （安装依赖）</li>
-<li>在github中新建一个仓库，注意！仓库的名字需要在后面加上’.github.io’，不要勾选readme.md，创建</li>
-<li><p>在编辑器中打开上述创建的文件夹，找到最外层的配置文件_config.yml,进入文件内，搜索deploy进行如下更改，repo是我们刚才创建的github的仓库地址</p>
-<blockquote>
-<p>deploy:<br>type: git<br>repo: <a href="https://github.com/yangxinjian/yangxinjian.github.io" target="_blank" rel="noopener">https://github.com/yangxinjian/yangxinjian.github.io</a><br>branch: master </p>
-</blockquote>
-<p>  完成连接，我们可以通过push，将代码提交到github，也可以通过hexo</p>
-<ul>
-<li><p>git push origin master</p>
-<blockquote>
-<p>也会出现Not a git repository (or any of the parent directories): .git这样的错误。这个错误代表在本地与github仓库未进行连接，解决办法如下：</p>
-<ul>
-<li>在该目录下输入：git init</li>
-<li>git add . (提交代码)</li>
-<li>git commit -m ‘备注’</li>
-<li>git remote add origin ‘你的仓库地址’</li>
-<li>git push origin master (完成提交)</li>
-</ul>
-</blockquote>
-</li>
-<li><p>npm install hexo-deployer-git –save</p>
-</li>
-<li>hexo g</li>
-<li><p>hexo d</p>
-<blockquote>
-<p>在这步骤可能会出现Repository not found.这个错误，这个错误出现，你就要检查一下你的仓库名字和你在配置相中写入到名字是否一致</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="4-开启运行"><a href="#4-开启运行" class="headerlink" title="4.开启运行"></a>4.开启运行</h4><ul>
-<li>本地运行 hexo s -g</li>
-<li>线上查看地址 https://你的仓库名字.github.io/</li>
-</ul>
-<h3 id="第二步：配置主题以及基本文字"><a href="#第二步：配置主题以及基本文字" class="headerlink" title="第二步：配置主题以及基本文字"></a>第二步：配置主题以及基本文字</h3><h4 id="1-配置主题"><a href="#1-配置主题" class="headerlink" title="1.配置主题"></a>1.配置主题</h4><ul>
-<li>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next  （克隆主题）</li>
-<li><p>在最外层的配置文件中_config.yml 将theme更改为next</p>
-<p>  <code>theme: next</code></p>
-</li>
-<li><p>在themes文件夹下的next文件夹下找到主题配置文件_config</p>
-<p>  <code>scheme 分别有四个主题选项，可以随意选择，#代表注释，去掉注释代码生效，一次只可以选择一个主题</code></p>
-</li>
-<li><p>social可以增添一些其他社会信息(例如github)</p>
-<p>  <code>social:GitHub: https://github.com/yangxinjian || github</code></p>
-</li>
-<li><p>avatar可以增添自己的头像(例如github)</p>
-<p>  <code>avatar: http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg</code></p>
-</li>
-<li>pace_theme下的四个为主题动画，将其中一个设置为true，即可以开启当前动画</li>
-<li><p>安装wordcount显示文章字数，在主题的config中搜索wordcount，全部设置为true</p>
-<blockquote>
-<p>cnpm install hexo-wordcount –save</p>
-</blockquote>
-</li>
-<li><p>安装站内搜索插件,在主题的config中搜索local-search，enable为true</p>
-<blockquote>
-<p>cnpm install hexo-generator-searchdb –save</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="2-基本文字"><a href="#2-基本文字" class="headerlink" title="2.基本文字"></a>2.基本文字</h4><pre><code>基本文字在最外层的_config文件中配置，例如：标题，描述，作者等信息
-
-title: 杨欣舰的博客 
-subtitle:
-description: 小前端的小笔记
-keywords:
-author: Sunny Yang
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -717,10 +500,11 @@ author: Sunny Yang
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -728,6 +512,10 @@ author: Sunny Yang
 
 
           
+
+  
+
+
 
         </div>
         
@@ -748,8 +536,17 @@ author: Sunny Yang
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -805,6 +602,22 @@ author: Sunny Yang
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6小坑"><span class="nav-number">1.</span> <span class="nav-text">ES6小坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用"><span class="nav-number">1.1.</span> <span class="nav-text">1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ES6重构代码"><span class="nav-number">1.2.</span> <span class="nav-text">2.ES6重构代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-‘…’"><span class="nav-number">1.3.</span> <span class="nav-text">3.‘…’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-promise"><span class="nav-number">1.4.</span> <span class="nav-text">4.promise</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -948,6 +761,10 @@ author: Sunny Yang
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
