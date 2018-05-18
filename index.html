@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,140
+                  1,866
                 </span>
               
 
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  6
+                  9
                 </span>
               
             </div>
@@ -503,9 +503,73 @@ var password = body.password
 <li>f2() =&gt; 4</li>
 <li>f3() =&gt; 9</li>
 </ul>
-<p>(3) 将（1）中的var改成let时，就会生成和闭包一样的效果，因为es6的let能让变量长期存在于内存，而且又不是全局的</p>
+<p>(3) 将（1）中的var改成let时，var的作用域是在count下，let转换成块级作用域，所以在for循环{}下，所以当我们在var的基础上执行函数count，作用域变成了结束循环的i值，而let的作用域保持在每一次循环的i</p>
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">test6 () &#123;</span><br><span class="line">	var results = this.count();</span><br><span class="line">	var f1 = results[0];</span><br><span class="line">	var f2 = results[1];</span><br><span class="line">	var f3 = results[2];</span><br><span class="line">	console.log(f1())</span><br><span class="line">	console.log(f2())</span><br><span class="line">	console.log(f3())</span><br><span class="line">&#125;,</span><br><span class="line">count() &#123;</span><br><span class="line">	var arr = [];</span><br><span class="line">	for (let i = 1; i &lt;= 3; i++) &#123;</span><br><span class="line">		arr.push(function () &#123;</span><br><span class="line">			return i * i;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
+</code></pre><h3 id="3-延时setTimeout"><a href="#3-延时setTimeout" class="headerlink" title="3.延时setTimeout"></a>3.延时setTimeout</h3><p>（1）队列执行</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var flag = true</span><br><span class="line">setTimeout ( () =&gt; &#123;</span><br><span class="line">	flag = false</span><br><span class="line">&#125;, 1000)</span><br><span class="line">while(flag) &#123;&#125;</span><br><span class="line">alert(&apos;1&apos;)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<ul>
+<li>永远不会弹出1，因为在while中是死循环，虽然setTimeout只延时了一秒执行，但是主队列中的while会永远的执行下去，所在settimeout的队列永远不会被执行，代码阻塞在while循环这面<br>（2）内存泄漏</li>
+</ul>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setTimeout (function test1 () &#123;</span><br><span class="line">	var a = 1</span><br><span class="line">	console.log(`a:$(a)`)</span><br><span class="line">&#125;,0)</span><br><span class="line"></span><br><span class="line">setTimeout ((function test2 () &#123;</span><br><span class="line">	var b = 1</span><br><span class="line">	console.log(`b:$&#123;b&#125;`)</span><br><span class="line">&#125;).toString(), 0)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<ul>
+<li>两个定时延时，第一个传入的参数是函数，函数回调之后，test1（）函数被摧毁，内存被释放 </li>
+<li>第二传入的参数是字符串，会被解析成eval（string），他是一个全局变量函数，不存在被摧毁，始终占据内存，造成了内存泄漏。</li>
+</ul>
+</blockquote>
+<h3 id="4-this"><a href="#4-this" class="headerlink" title="4.this"></a>4.this</h3><p>(1)在return中返回</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function getName() &#123;</span><br><span class="line">	this.name = 1</span><br><span class="line">	return &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">var a = new getName()</span><br><span class="line">console.log(a)</span><br><span class="line">console.log(a.name)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>控制台输出 {} , undifined</p>
+<ul>
+<li>return返回的是一个空对象，所以new也是为空</li>
+</ul>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function getName () &#123;</span><br><span class="line">	this.name = 1</span><br><span class="line">	return 2</span><br><span class="line">&#125;</span><br><span class="line">var d = new getName()</span><br><span class="line">console.log(d.name)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>控制台输出 1 </p>
+<ul>
+<li>return返回的是一个非空对象，所以new实例getName()方法</li>
+</ul>
+</blockquote>
+<p>（2）this被谁调用就指向谁</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var x = 0 </span><br><span class="line">var foo = &#123;</span><br><span class="line">	x: 1,</span><br><span class="line">	bar: &#123;</span><br><span class="line">		x: 2,</span><br><span class="line">		baz: function () &#123;</span><br><span class="line">			console.log(this.x)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var a = foo.bar.baz</span><br><span class="line">foo.bar.baz()</span><br><span class="line">a()</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>控制台输出 2 0</p>
+<ul>
+<li>baz()是被bar调用，所以this指向bar中的x2</li>
+<li>a()是被windows调用，所以指向windows下的x0</li>
+</ul>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var x = 0</span><br><span class="line">function foo () &#123;</span><br><span class="line">	var x = 1</span><br><span class="line">	function baz()&#123;</span><br><span class="line">		console.log(this.x)</span><br><span class="line">	&#125;</span><br><span class="line">	return baz</span><br><span class="line">&#125;</span><br><span class="line">var a = foo()</span><br><span class="line">foo()()</span><br><span class="line">a()</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>控制台输出 0 0</p>
+<ul>
+<li>foo()()是函数调用，是全局的指向，所以是windows下的x0</li>
+<li>a()是被windows调用，所以指向windows下的x0</li>
+</ul>
+</blockquote>
+<p> (3) new实例对象中的this</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;yang&apos;</span><br><span class="line">function person() &#123;</span><br><span class="line">	this.name = &apos;zhu&apos;</span><br><span class="line">&#125;</span><br><span class="line">var a = new person()</span><br><span class="line">console.log(a.name)</span><br><span class="line">console.log(name)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>控制台输出 zhu yang</p>
+<ul>
+<li>a重新实例了person对象，所以this指向当前对象下的值</li>
+</ul>
+</blockquote>
+<p>（4）apply</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var x = 0</span><br><span class="line">function test() &#123;</span><br><span class="line">	console.log(this.x)</span><br><span class="line">&#125;</span><br><span class="line">var o = &#123;&#125;</span><br><span class="line">o.x = 1</span><br><span class="line">o.m = test</span><br><span class="line">o.m()</span><br><span class="line">o.m.apply()</span><br><span class="line">o.m.apply(o)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>控制台输出 1 0 1</p>
+<ul>
+<li>o里面新添入x属性和m属性，m属性赋值一个函数，m属于o，当o.m()的时候，m是被o调用的，所以m里面的this指向是o里面的x，也就是1</li>
+<li>o.m.apply(),apply的作用是给函数设置一个this指向,当传入的参数没有，或者为null或者undifined的时候，指向全局，所以相当于在windows下调用，所以this指向x0</li>
+<li>apply()中参数存在，指向o，所以m是被o调用，指向o中的x为1</li>
+</ul>
+</blockquote>
+
           
         
       
@@ -882,7 +946,7 @@ author: Sunny Yang
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.8k</span>
+    <span title="Site words total count">2.6k</span>
   
 </div>
 
