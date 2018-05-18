@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="杨欣舰的博客">
 <meta property="og:description" content="ES6小坑1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用123function test (arg = 100) &amp;#123;	console.log(num)&amp;#125;  test(0) =&amp;gt; 0test() =&amp;gt; 100test(200) =&amp;gt; 200    相对于ES5，arg = arg || 100这样设置参数默认值的时候">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-18T08:13:59.013Z">
+<meta property="og:updated_time" content="2018-05-18T08:45:08.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS常见的‘坑’">
 <meta name="twitter:description" content="ES6小坑1.ES6为参数提供了默认值，在定义函数的同时初始化了这个参数，以便在参数没有被传递进去使用123function test (arg = 100) &amp;#123;	console.log(num)&amp;#125;  test(0) =&amp;gt; 0test() =&amp;gt; 100test(200) =&amp;gt; 200    相对于ES5，arg = arg || 100这样设置参数默认值的时候">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,856
+                  1,980
                 </span>
               
 
@@ -565,6 +565,16 @@ var password = body.password
 <li>apply()中参数存在，指向o中的x为1</li>
 </ul>
 </blockquote>
+<p>（5）闭包中的this</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var x = 0</span><br><span class="line">var foo =  &#123;</span><br><span class="line">	x: 1,</span><br><span class="line">	bar: function ()&#123;</span><br><span class="line">		console.log(this.x)</span><br><span class="line">		var that = this</span><br><span class="line">		return function () &#123;</span><br><span class="line">			console.log(this.x)</span><br><span class="line">			console.log(that.x)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">foo.bar()() 	 =》 	 let bar = foo() bar()</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>控制台输出 1 0 1</p>
+<ul>
+<li>第一个（）输出的值是foo调用，所以是1</li>
+<li>闭包返回的this调用的不是对象而是下一个函数，所以指向的是全局，所以是0</li>
+<li>闭包返回的that是接受了上一步的this，所以是1</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -759,7 +769,7 @@ var password = body.password
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.5k</span>
+    <span title="Site words total count">2.7k</span>
   
 </div>
 
