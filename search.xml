@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue小记知识点]]></title>
+    <url>%2F2018%2F06%2F21%2Fvue%2F</url>
+    <content type="text"><![CDATA[1. this.$router.go(0) 重新刷新加载页面]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript 知识点]]></title>
+    <url>%2F2018%2F06%2F21%2Fjs%2F</url>
+    <content type="text"><![CDATA[概念知识点1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOMnavigator对象包含有关浏览器的信息，例如：版本appVersion, 名称appName, 操作系统平台platform等 location对象包含有关当前URL的信息，常用：window.location.href获取当前地址或者改变新的地址/window.location.reload()重新加载当前页面 screen对象包含有关客户端显示屏幕的信息，例如：window.screen.height返回屏幕的总高度 3.NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN4.++/– –,++前置时，先运算再赋值 1234var num1 = 10var num2 = 20var num3 = --num1 + num2 =&gt; num3 = 29var num4 = num1 + num2 =&gt; num4 = 29 –,++后置时，先赋值再运算 1234var num1 = 10var num2 = 20var num3 = num1-- + num2 =&gt; num3 = 30var num4 = num1 + num2 =&gt; num4 = 29 5.函数中return后面的语句不会被执行1234function test () &#123; return; alert(1)//alert提示框永远不会弹出&#125;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Here are some of the basic knowledge you should know]]></title>
     <url>%2F2018%2F06%2F20%2Fquestion%2F</url>
-    <content type="text"><![CDATA[1.The differece betwwen ‘pixelTop’ and ‘Top’ pixelTop value is an integar no a string , but top value is string]]></content>
+    <content type="text"><![CDATA[1.The differece between ‘pixelTop’ and ‘Top’ pixelTop value is an integar not a string , but top value is string 2.]]></content>
   </entry>
   <entry>
     <title><![CDATA[css小技巧]]></title>
