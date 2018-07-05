@@ -286,6 +286,164 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/vuex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/05/vuex/" itemprop="url">Vuex实现存储用户登录后的用户信息，方便在各个页面中使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T16:00:11+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  343
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-安装vuex"><a href="#1-安装vuex" class="headerlink" title="1. 安装vuex"></a>1. 安装vuex</h2><pre><code>npm install vuex --save-dev
+</code></pre><h2 id="2-建立全局store"><a href="#2-建立全局store" class="headerlink" title="2. 建立全局store"></a>2. 建立全局store</h2><h3 id="1-在src文件夹下，新建文件夹（一般我们取名store），并在该文件夹下创建存储数据的js文件。"><a href="#1-在src文件夹下，新建文件夹（一般我们取名store），并在该文件夹下创建存储数据的js文件。" class="headerlink" title="1.在src文件夹下，新建文件夹（一般我们取名store），并在该文件夹下创建存储数据的js文件。"></a>1.在src文件夹下，新建文件夹（一般我们取名store），并在该文件夹下创建存储数据的js文件。</h3><h3 id="2-在main-js文件下，我们需要将存储的数据文件设置为全局形式，方便引用"><a href="#2-在main-js文件下，我们需要将存储的数据文件设置为全局形式，方便引用" class="headerlink" title="2.在main.js文件下，我们需要将存储的数据文件设置为全局形式，方便引用"></a>2.在main.js文件下，我们需要将存储的数据文件设置为全局形式，方便引用</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import store from &apos;./你新建的文件夹文字/你文件夹下的文件名字&apos;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  router,</span><br><span class="line">  store, //这里不要忘记咯</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="3-编写js文件"><a href="#3-编写js文件" class="headerlink" title="3. 编写js文件"></a>3. 编写js文件</h2><h3 id="1-在这里，我们要先定义我们的state，用来装所需要存储的数据，初始值是空。"><a href="#1-在这里，我们要先定义我们的state，用来装所需要存储的数据，初始值是空。" class="headerlink" title="1. 在这里，我们要先定义我们的state，用来装所需要存储的数据，初始值是空。"></a>1. 在这里，我们要先定义我们的state，用来装所需要存储的数据，初始值是空。</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const state = &#123;</span><br><span class="line">	user: &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-接下来我们定义mutation，编写我们要改变的事件，去接受值，参数为两个，一个是state，一个是payLoad（就是我们要存储的所有数据）"><a href="#2-接下来我们定义mutation，编写我们要改变的事件，去接受值，参数为两个，一个是state，一个是payLoad（就是我们要存储的所有数据）" class="headerlink" title="2. 接下来我们定义mutation，编写我们要改变的事件，去接受值，参数为两个，一个是state，一个是payLoad（就是我们要存储的所有数据）"></a>2. 接下来我们定义mutation，编写我们要改变的事件，去接受值，参数为两个，一个是state，一个是payLoad（就是我们要存储的所有数据）</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const mutations = &#123;</span><br><span class="line">  setUserInfo(state, payload) &#123;</span><br><span class="line">    state.user = payload //现在我们把存储的值都放在state的user对象下</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="3-将我们的state和mutation暴漏出去，用于全局引用"><a href="#3-将我们的state和mutation暴漏出去，用于全局引用" class="headerlink" title="3. 将我们的state和mutation暴漏出去，用于全局引用"></a>3. 将我们的state和mutation暴漏出去，用于全局引用</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  mutations</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="4-登录存储"><a href="#4-登录存储" class="headerlink" title="4. 登录存储"></a>4. 登录存储</h2><p>在我们获取登录接口并且服务器返回成功后，进行数据存储</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&apos;setUserInfo&apos;, &#123;data:rep.data.data&#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="5-调用存储数据"><a href="#5-调用存储数据" class="headerlink" title="5.调用存储数据"></a>5.调用存储数据</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.state.user//输出结果就是我们存储进去的信息</span><br></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -600,159 +758,6 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/question/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sunny Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨欣舰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/20/question/" itemprop="url">Here are some of the basic knowledge you should know</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">创建于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-20T16:02:24+08:00">
-                2018-06-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  21
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-The-differece-between-‘pixelTop’-and-‘Top’"><a href="#1-The-differece-between-‘pixelTop’-and-‘Top’" class="headerlink" title="1.The differece between ‘pixelTop’ and ‘Top’"></a>1.The differece between ‘pixelTop’ and ‘Top’</h3><blockquote>
-<p>pixelTop value is an integar not a string , but top value is string</p>
-</blockquote>
-<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/css/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -816,7 +821,7 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  339
+                  353
                 </span>
               
 
@@ -887,6 +892,7 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
      border-right: 26px solid #f6dbd8;
      border-bottom: 13px solid transparent;
  }
+</code></pre><h3 id="3-去除input标签默认点击边框"><a href="#3-去除input标签默认点击边框" class="headerlink" title="3.去除input标签默认点击边框"></a>3.去除input标签默认点击边框</h3><pre><code>outline: none;
 </code></pre>
           
         
@@ -1994,7 +2000,7 @@ author: Sunny Yang
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.3k</span>
+    <span title="Site words total count">4.6k</span>
   
 </div>
 

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vuex实现存储用户登录后的用户信息，方便在各个页面中使用]]></title>
+    <url>%2F2018%2F07%2F05%2Fvuex%2F</url>
+    <content type="text"><![CDATA[1. 安装vuexnpm install vuex --save-dev 2. 建立全局store1.在src文件夹下，新建文件夹（一般我们取名store），并在该文件夹下创建存储数据的js文件。2.在main.js文件下，我们需要将存储的数据文件设置为全局形式，方便引用1234567import store from &apos;./你新建的文件夹文字/你文件夹下的文件名字&apos;new Vue(&#123; el: &apos;#app&apos;, router, store, //这里不要忘记咯 render: h =&gt; h(App)&#125;) 3. 编写js文件1. 在这里，我们要先定义我们的state，用来装所需要存储的数据，初始值是空。12345const state = &#123; user: &#123; &#125;&#125; 2. 接下来我们定义mutation，编写我们要改变的事件，去接受值，参数为两个，一个是state，一个是payLoad（就是我们要存储的所有数据）12345const mutations = &#123; setUserInfo(state, payload) &#123; state.user = payload //现在我们把存储的值都放在state的user对象下 &#125;&#125; 3. 将我们的state和mutation暴漏出去，用于全局引用1234export default new Vuex.Store(&#123; state, mutations&#125;) 4. 登录存储在我们获取登录接口并且服务器返回成功后，进行数据存储 1this.$store.commit(&apos;setUserInfo&apos;, &#123;data:rep.data.data&#125;) 5.调用存储数据1this.$store.state.user//输出结果就是我们存储进去的信息]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Vue小记知识点]]></title>
     <url>%2F2018%2F06%2F21%2Fvue%2F</url>
     <content type="text"><![CDATA[1. this.$router.go(0) 重新刷新加载页面]]></content>
@@ -11,14 +16,9 @@
     <content type="text"><![CDATA[概念知识点1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOMnavigator对象包含有关浏览器的信息，例如：版本appVersion, 名称appName, 操作系统平台platform等 location对象包含有关当前URL的信息，常用：window.location.href获取当前地址或者改变新的地址/window.location.reload()重新加载当前页面 screen对象包含有关客户端显示屏幕的信息，例如：window.screen.height返回屏幕的总高度 3.NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN4.++/– –,++前置时，先运算再赋值 1234var num1 = 10var num2 = 20var num3 = --num1 + num2 =&gt; num3 = 29var num4 = num1 + num2 =&gt; num4 = 29 –,++后置时，先赋值再运算 1234var num1 = 10var num2 = 20var num3 = num1-- + num2 =&gt; num3 = 30var num4 = num1 + num2 =&gt; num4 = 29 5.函数中return后面的语句不会被执行1234function test () &#123; return; alert(1)//alert提示框永远不会弹出&#125;]]></content>
   </entry>
   <entry>
-    <title><![CDATA[Here are some of the basic knowledge you should know]]></title>
-    <url>%2F2018%2F06%2F20%2Fquestion%2F</url>
-    <content type="text"><![CDATA[1.The differece between ‘pixelTop’ and ‘Top’ pixelTop value is an integar not a string , but top value is string 2.]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[css小技巧]]></title>
     <url>%2F2018%2F06%2F14%2Fcss%2F</url>
-    <content type="text"><![CDATA[1.元素居中(1) 块状元素居中1234.box &#123; width: 100px; margin: o auto;&#125; (2) 浮动元素居中（不提倡）123456789.box &#123; position: absolute; width: 100px; height: 100px; left: 50%; top: 50%; margin-left: -50px; margin-top: -50px;&#125; (3) flex元素居中（超级实用）12345.box &#123; display: flex; justify-content: center; 一行下的水平居中 align-items: center; 多行的竖直居中&#125; 2.伪类####（1）相同class的index检索 123456:last-child 检索最后一个值:first-child 检索第一个值:nth-child(index) 从头开始检索index个值，index初始值为1:nth-last-child(index) 从尾开始检索index个值，index为1默认倒数第一个（这个比较坑）:nth-child(odd) 检索基数:nth-child(even) 检索偶数 找出倒数第几个的样式，这个伪类还是很帅气的，之前写一个项目，li下面又放了一个标签，怎么调节li最后一个都不变，但是因为li有同级最后，那就不是最后一个元素，后来使用nth-last-child(2)就弄好了 ####（2）::before写出小三角 .box{ position: relative; left:100px; width: 140px; min-height: 70px; background: #f6dbd8; -moz-border-radius: 12px; -webkit-border-radius: 12px; border-radius: 12px; padding: 5px 10px; word-wrap: break-word; } .box:before{ 三角形区域 position: absolute; content: &quot;&quot;; width: 0; height: 0; right: 100%; top: 38px; border-top: 13px solid transparent; border-right: 26px solid #f6dbd8; border-bottom: 13px solid transparent; }]]></content>
+    <content type="text"><![CDATA[1.元素居中(1) 块状元素居中1234.box &#123; width: 100px; margin: o auto;&#125; (2) 浮动元素居中（不提倡）123456789.box &#123; position: absolute; width: 100px; height: 100px; left: 50%; top: 50%; margin-left: -50px; margin-top: -50px;&#125; (3) flex元素居中（超级实用）12345.box &#123; display: flex; justify-content: center; 一行下的水平居中 align-items: center; 多行的竖直居中&#125; 2.伪类####（1）相同class的index检索 123456:last-child 检索最后一个值:first-child 检索第一个值:nth-child(index) 从头开始检索index个值，index初始值为1:nth-last-child(index) 从尾开始检索index个值，index为1默认倒数第一个（这个比较坑）:nth-child(odd) 检索基数:nth-child(even) 检索偶数 找出倒数第几个的样式，这个伪类还是很帅气的，之前写一个项目，li下面又放了一个标签，怎么调节li最后一个都不变，但是因为li有同级最后，那就不是最后一个元素，后来使用nth-last-child(2)就弄好了 ####（2）::before写出小三角 .box{ position: relative; left:100px; width: 140px; min-height: 70px; background: #f6dbd8; -moz-border-radius: 12px; -webkit-border-radius: 12px; border-radius: 12px; padding: 5px 10px; word-wrap: break-word; } .box:before{ 三角形区域 position: absolute; content: &quot;&quot;; width: 0; height: 0; right: 100%; top: 38px; border-top: 13px solid transparent; border-right: 26px solid #f6dbd8; border-bottom: 13px solid transparent; } 3.去除input标签默认点击边框outline: none;]]></content>
   </entry>
   <entry>
     <title><![CDATA[常用正则表达式]]></title>
