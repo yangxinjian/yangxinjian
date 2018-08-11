@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="杨欣舰的博客">
 <meta property="og:description" content="概念知识点1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOMnavigator对象包含有关浏览器的信息，例如：版本appVersion, 名称appNa">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-21T08:25:17.494Z">
+<meta property="og:updated_time" content="2018-08-11T08:25:17.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 知识点">
 <meta name="twitter:description" content="概念知识点1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOMnavigator对象包含有关浏览器的信息，例如：版本appVersion, 名称appNa">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  279
+                  548
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -398,6 +398,14 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
 </blockquote>
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = 10</span><br><span class="line">var num2 = 20</span><br><span class="line">var num3 = num1-- + num2 =&gt; num3 = 30</span><br><span class="line">var num4 = num1 + num2 =&gt; num4 = 29</span><br></pre></td></tr></table></figure>
 </code></pre><h4 id="5-函数中return后面的语句不会被执行"><a href="#5-函数中return后面的语句不会被执行" class="headerlink" title="5.函数中return后面的语句不会被执行"></a>5.函数中return后面的语句不会被执行</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function test () &#123;</span><br><span class="line">	return;</span><br><span class="line">	alert(1)//alert提示框永远不会弹出</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="6-深浅克隆-原生js，也可参考jquery文档下的克隆"><a href="#6-深浅克隆-原生js，也可参考jquery文档下的克隆" class="headerlink" title="6.深浅克隆(原生js，也可参考jquery文档下的克隆)"></a>6.深浅克隆(原生js，也可参考jquery文档下的克隆)</h4><blockquote>
+<p>浅克隆（简单的复制对象，如果对象其中一个属性是引用型变量，就会出现负值增生的情况，因为引用型变量保存的是内存地址，所以其实后来操作的都是同一块内存，导致了数组内容都一样。）</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var objTemplate = &#123;</span><br><span class="line">	name: &apos;pig&apos;,</span><br><span class="line">	username: &apos;杨欣舰&apos;,</span><br><span class="line">	tag: [&apos;淑女&apos;]</span><br><span class="line">&#125;//obj 为初始值对象</span><br><span class="line">function simpleCopy (obj) &#123;</span><br><span class="line">	var newobj = &#123;&#125;</span><br><span class="line">	for (var i in obj) &#123;</span><br><span class="line">		newobj[i] = obj[i]</span><br><span class="line">	&#125;</span><br><span class="line">	return newobj</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var userboy = simpleCopy(objTemplate)</span><br><span class="line">userboy.name = &apos;小龙龙&apos;</span><br><span class="line">userboy.username = &apos;龙宝&apos;</span><br><span class="line">userboy.tag.push(&apos;亲爱的&apos;)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>深度克隆（深克隆就是在克隆的时候判断一下属性的类型是不是引用型变量，如果是的话就用递归方法让它一层一层进去复制自己。）</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function deepCopy (obj, newobj) &#123;</span><br><span class="line">	var newobj = newobj || &#123;&#125;</span><br><span class="line">	for (var i in obj) &#123;</span><br><span class="line">		if (typeof obj[i] == &apos;Object&apos;) &#123;</span><br><span class="line">			newobj[i] = (obj[i].construtor === Array) ? [] : &#123;&#125;</span><br><span class="line">			deepCopy(obj[i], newobj[i])</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			newobj[i] = obj[i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return newobj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre>
       
     </div>
@@ -515,7 +523,7 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -562,7 +570,7 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念知识点"><span class="nav-number">1.</span> <span class="nav-text">概念知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-JavaScript-实现由-核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM-构成。"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-浏览器窗口功能以及navigator对象-location对象-screen对象，对cookie-XMLHttpRequest-ActiveXObject的支持均属于BOM"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-–"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.++/–</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-函数中return后面的语句不会被执行"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.函数中return后面的语句不会被执行</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念知识点"><span class="nav-number">1.</span> <span class="nav-text">概念知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-JavaScript-实现由-核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM-构成。"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-浏览器窗口功能以及navigator对象-location对象-screen对象，对cookie-XMLHttpRequest-ActiveXObject的支持均属于BOM"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-–"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.++/–</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-函数中return后面的语句不会被执行"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.函数中return后面的语句不会被执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-深浅克隆-原生js，也可参考jquery文档下的克隆"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.深浅克隆(原生js，也可参考jquery文档下的克隆)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -596,7 +604,7 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.6k</span>
+    <span title="Site words total count">5.2k</span>
   
 </div>
 
