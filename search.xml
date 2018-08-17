@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[从零开始自学微信小程序之路]]></title>
+    <url>%2F2018%2F08%2F16%2Fwechat%2F</url>
+    <content type="text"><![CDATA[1. 使用/安装 配置：在微信公众平台申请小程序账号，下载微信开发者工具，本地创建项目文件夹，并输入appid和项目名称，进入小程序项目WeUI-wxss安装使用：WeUI-wxss是一套同微信原生视觉体验一致的基础样式库,设计规范参考https://github.com/weui/weui-design 123https://github.com/Tencent/weui-wxss下载到本地（git clone https://github.com/Tencent/weui-wxss.git）将weui-wxss/dist/style/weui.wxss放到小程序项目的根目录下在项目中引用：在全局app.wxss中加入weui.wxss的引用- @import &quot;weui.wxss&quot;;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[jquery知识点]]></title>
     <url>%2F2018%2F08%2F11%2Fjquery%2F</url>
     <content type="text"><![CDATA[1.属性拷贝 浅拷贝(只复制一份原始对象的引用) 1var newObj = $.extend(&#123;&#125;, oldObject) 深拷贝(对原始对象属性所引用的对象进行递归拷贝) 1var newObj = $.extend(true, &#123;&#125;, oldObject)]]></content>
@@ -18,7 +23,7 @@
   <entry>
     <title><![CDATA[Vue小记知识点]]></title>
     <url>%2F2018%2F06%2F21%2Fvue%2F</url>
-    <content type="text"><![CDATA[1. this.$router.go(0) 重新刷新加载页面]]></content>
+    <content type="text"><![CDATA[1. this.$router.go(0) 重新刷新加载页面2. 使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天 解决办法，设置value-format！！！！，文档上写的是value属性，当时小坑了一下 1:value-format=&quot;yyyy-MM&quot; 3. axios下关于put/get/delete/post请求的三种传参方式（1）get/put/delete/post关于path传参方式12345this.$axios.get(&quot;/hospital/ruleDicts/&quot; + 参数) .then(() =&gt; &#123; &#125;) .catch((err) =&gt; &#123; &#125;) （2）get/put/delete/post关于body传参方式12345678that.$axios.put(&quot;/hospital/updateRule/&quot;, &#123; 字段1: 参数值， 字段2: 参数值 &#125;) .then(() =&gt; &#123; &#125;) .catch((err) =&gt; &#123; &#125;) （3）get/put/delete/post关于query传参方式12345that.$axios.put(&quot;/hospital/updatePackageName/&quot;?参数字段=&quot;+参数值) .then((res)=&gt;&#123; &#125;,(err)=&gt;&#123; &#125;).catch((error)=&gt;&#123; &#125;) 4. bus.js实现兄弟之间组件通信（官方文档中只提供了父与子通信） 在文件夹中新建一个文件，随意取名，例如bus.js放在了assets文件夹（文件夹自定义）下，在bus.js文件夹下写入： import Vue from &apos;vue&apos; export default new Vue() 在两个要通信的兄弟组件之间引入bus.js import bus from &apos;你bus.js文件存放的位置&apos; 想要传递信息的兄弟1 &lt;button @click=&quot;toBus&quot;&gt;&lt;/button&gt; methods: { toBus () { bus.$emit(&apos;on&apos;, &apos;这个是兄弟1传给兄弟2的值&apos;) } } 接受传递信息的兄弟2 mounted () { bus.$on(&apos;on&apos;, (msg) =&gt; { console.log(msg) // msg就是从兄弟1接到的数据 }) }]]></content>
   </entry>
   <entry>
     <title><![CDATA[JavaScript 知识点]]></title>
