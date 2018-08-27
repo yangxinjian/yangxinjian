@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1.元素居中(1) 块状元素居中1234.box &amp;#123;	width: 100px;	margin: o auto;&amp;#125; (2) 浮动元素居中（不提倡）123456789.box &amp;#123;	position: absolute;	width: 100px;	height: 100px;	left: 50%;	top: 50%;	margin-left: -50px;	margin">
+<meta name="description" content="Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合 (mixins)、导入 (inline imports) 等高级功能 安装(mac下)以及使用 安装  12sudo cnpm install node-sass --save-devsudo cnpm install sass-loader --sav">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css小技巧">
-<meta property="og:url" content="http://yoursite.com/2018/06/14/css/index.html">
+<meta property="og:title" content="vue 中使用 sass">
+<meta property="og:url" content="http://yoursite.com/2018/08/25/sass/index.html">
 <meta property="og:site_name" content="杨欣舰的博客">
-<meta property="og:description" content="1.元素居中(1) 块状元素居中1234.box &amp;#123;	width: 100px;	margin: o auto;&amp;#125; (2) 浮动元素居中（不提倡）123456789.box &amp;#123;	position: absolute;	width: 100px;	height: 100px;	left: 50%;	top: 50%;	margin-left: -50px;	margin">
+<meta property="og:description" content="Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合 (mixins)、导入 (inline imports) 等高级功能 安装(mac下)以及使用 安装  12sudo cnpm install node-sass --save-devsudo cnpm install sass-loader --sav">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-20T02:47:37.613Z">
+<meta property="og:updated_time" content="2018-08-25T07:18:16.770Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css小技巧">
-<meta name="twitter:description" content="1.元素居中(1) 块状元素居中1234.box &amp;#123;	width: 100px;	margin: o auto;&amp;#125; (2) 浮动元素居中（不提倡）123456789.box &amp;#123;	position: absolute;	width: 100px;	height: 100px;	left: 50%;	top: 50%;	margin-left: -50px;	margin">
+<meta name="twitter:title" content="vue 中使用 sass">
+<meta name="twitter:description" content="Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合 (mixins)、导入 (inline imports) 等高级功能 安装(mac下)以及使用 安装  12sudo cnpm install node-sass --save-devsudo cnpm install sass-loader --sav">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/14/css/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/25/sass/"/>
 
 
 
 
 
-  <title>css小技巧 | 杨欣舰的博客</title>
+  <title>vue 中使用 sass | 杨欣舰的博客</title>
   
 
 
@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/css/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/sass/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sunny Yang">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">css小技巧</h1>
+          <h1 class="post-title" itemprop="name headline">vue 中使用 sass</h1>
         
 
         <div class="post-meta">
@@ -315,8 +315,8 @@
               
                 <span class="post-meta-item-text">创建于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-14T11:14:18+08:00">
-                2018-06-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-25T10:20:14+08:00">
+                2018-08-25
               </time>
             
 
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  505
+                  809
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  4
                 </span>
               
             </div>
@@ -384,46 +384,120 @@
       
 
       
-        <h3 id="1-元素居中"><a href="#1-元素居中" class="headerlink" title="1.元素居中"></a>1.元素居中</h3><h4 id="1-块状元素居中"><a href="#1-块状元素居中" class="headerlink" title="(1) 块状元素居中"></a>(1) 块状元素居中</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	margin: o auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="2-浮动元素居中（不提倡）"><a href="#2-浮动元素居中（不提倡）" class="headerlink" title="(2) 浮动元素居中（不提倡）"></a>(2) 浮动元素居中（不提倡）</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	margin-left: -50px;</span><br><span class="line">	margin-top: -50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="3-flex元素居中（超级实用）"><a href="#3-flex元素居中（超级实用）" class="headerlink" title="(3) flex元素居中（超级实用）"></a>(3) flex元素居中（超级实用）</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">	display: flex;</span><br><span class="line">	justify-content: center; 一行下的水平居中</span><br><span class="line">	align-items: center; 多行的竖直居中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="2-伪类"><a href="#2-伪类" class="headerlink" title="2.伪类"></a>2.伪类</h3><p>####（1）相同class的index检索</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:last-child    检索最后一个值</span><br><span class="line">:first-child	检索第一个值</span><br><span class="line">:nth-child(index)	从头开始检索index个值，index初始值为1</span><br><span class="line">:nth-last-child(index)	从尾开始检索index个值，index为1默认倒数第一个（这个比较坑）</span><br><span class="line">:nth-child(odd)		检索基数</span><br><span class="line">:nth-child(even)	检索偶数</span><br></pre></td></tr></table></figure>
+        <p>Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合 (mixins)、导入 (inline imports) 等高级功能</p>
+<h2 id="安装-mac下-以及使用"><a href="#安装-mac下-以及使用" class="headerlink" title="安装(mac下)以及使用"></a>安装(mac下)以及使用</h2><blockquote>
+<p>安装</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cnpm install node-sass --save-dev</span><br><span class="line">sudo cnpm install sass-loader --save-dev</span><br></pre></td></tr></table></figure>
 </code></pre><blockquote>
-<p>找出倒数第几个的样式，这个伪类还是很帅气的，之前写一个项目，li下面又放了一个标签，怎么调节li最后一个都不变，但是因为li有同级最后，那就不是最后一个元素，后来使用nth-last-child(2)就弄好了</p>
+<p>使用</p>
 </blockquote>
-<p>####（2）::before写出小三角</p>
-<pre><code> .box{
-     position: relative;
-     left:100px;
-     width: 140px;
-     min-height: 70px;
-     background: #f6dbd8;
-     -moz-border-radius: 12px;
-     -webkit-border-radius: 12px;
-     border-radius: 12px;
-     padding: 5px 10px;
-     word-wrap: break-word;
-}
-.box:before{ 三角形区域
-     position: absolute;
-     content: &quot;&quot;;
-     width: 0;
-     height: 0;
-     right: 100%;
-     top: 38px;
-     border-top: 13px solid transparent;
-     border-right: 26px solid #f6dbd8;
-     border-bottom: 13px solid transparent;
- }
-</code></pre><h3 id="3-去除input标签默认点击边框"><a href="#3-去除input标签默认点击边框" class="headerlink" title="3.去除input标签默认点击边框"></a>3.去除input标签默认点击边框</h3><pre><code>outline: none;
-</code></pre><h3 id="4-编写一个小三角"><a href="#4-编写一个小三角" class="headerlink" title="4.编写一个小三角"></a>4.编写一个小三角</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.demo&#123;</span><br><span class="line">	width: 0;</span><br><span class="line">	height: 0;</span><br><span class="line">	border-width: 20px;</span><br><span class="line">	border-style: solid;</span><br><span class="line">	border-color: transparent tansparent red transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="5-box-sizing"><a href="#5-box-sizing" class="headerlink" title="5.box-sizing"></a>5.box-sizing</h3><blockquote>
-<p>box-sizing: content-box; //默认的标准盒模型元素效果（w3c）<br>box-sizing: border-box; //默认的怪异盒模型元素效果（ie）<br>box-sizing: inherit; //继承父元素box-sizing的属性值</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt; //scoped代表只在本页应用的样式</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><h3 id="1-嵌套"><a href="#1-嵌套" class="headerlink" title="1. 嵌套"></a>1. 嵌套</h3><p>css允许将一套css样式套进另一套样式中，内层的样式为外层样式的子选择器<br>（1）普通嵌套</p>
+<blockquote>
+<p>scss样式</p>
 </blockquote>
-<h3 id="6-移动端适配css插件-–-cssrem（vscode下安装步骤）"><a href="#6-移动端适配css插件-–-cssrem（vscode下安装步骤）" class="headerlink" title="6.移动端适配css插件 – cssrem（vscode下安装步骤）"></a>6.移动端适配css插件 – cssrem（vscode下安装步骤）</h3><pre><code>1. 在vscode的扩展商店，搜索cssrem
-2. 点击安装，安装后，点击重新加载
-3. 加载完成后，打开设置，在右边配置输入中，可以设置转换长度，&quot;cssrem-rootFontSize&quot;
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">	background: red;</span><br><span class="line">	div &#123;</span><br><span class="line">		height: 30px;</span><br><span class="line">		a&#123;</span><br><span class="line">			display: block;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br><span class="line">body div &#123;</span><br><span class="line">		height: 30px;</span><br><span class="line">&#125;</span><br><span class="line">body div a&#123;</span><br><span class="line">	display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>（2）父选择器<br>scss 用 &amp; 符号代表嵌套规则外层的父选择器</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	background: red;</span><br><span class="line">	&amp;:hover &#123;</span><br><span class="line">		text-decoration: underline;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br><span class="line">a:hover &#123;</span><br><span class="line">	text-decoration: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>（3）属性嵌套<br>sass允许同一个属性嵌套在命名空间中</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	font &#123;</span><br><span class="line">		size: 28px;</span><br><span class="line">		weight: bold;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	font-size: 28px;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>（4）@import嵌套样式</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.text &#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">	@import &apos;text&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p .text&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-变量"><a href="#2-变量" class="headerlink" title="2. 变量 $"></a>2. 变量 $</h3><p>变量支持块级作用域，嵌套内定义的变量成为局部变量，只能在当前嵌套内使用，在顶层定义的变量成为全局变量，可以在所用地方使用</p>
+<ul>
+<li>!global 可以将局部变量转换为全局变量，用于结尾</li>
+</ul>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	$width: 100px !global;</span><br><span class="line">	width: $width;</span><br><span class="line">&#125;</span><br><span class="line">.container &#123;</span><br><span class="line">	width: $width;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.container &#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>!default 默认变量，不会重新赋值已经赋值的变量，但是没有赋值的变量会赋予值</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$content: &apos;a little pain&apos;</span><br><span class="line">$content: &apos;much pain&apos; !default</span><br><span class="line">$value: &apos;lover&apos;</span><br><span class="line">p:before &#123;</span><br><span class="line">	content: $content</span><br><span class="line">&#125;</span><br><span class="line">a:before&#123;</span><br><span class="line">	content: $value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>编译后css样式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p:before &#123;</span><br><span class="line">	content: a little pain</span><br><span class="line">&#125;</span><br><span class="line">a:before&#123;</span><br><span class="line">	content: &apos;lover&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-字符串"><a href="#3-字符串" class="headerlink" title="3. 字符串"></a>3. 字符串</h3><ul>
+<li>使用#{}时，有引号字符串将被编译为无引号字符串，这样便于在，，mixin中引用选择器名</li>
+</ul>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@mixin firefox-message($selector) &#123;</span><br><span class="line">	body.content #&#123;$selector&#125;:before &#123;</span><br><span class="line">		content: &apos;hi&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@include firefox-message(&apos;.header&apos;)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body.content .header:before&#123;</span><br><span class="line">	content: &apos;hi&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="4-运算"><a href="#4-运算" class="headerlink" title="4. 运算"></a>4. 运算</h3><blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-size: 20px + 10px/2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-size: 25px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="5-插值语句"><a href="#5-插值语句" class="headerlink" title="5. 插值语句"></a>5. 插值语句</h3><p>通过#{} 插值语句可以在选择器或属性名中使用变量</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$name: pig</span><br><span class="line">$p: padding</span><br><span class="line">p .$name &#123;</span><br><span class="line">	$p-left: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p .pig&#123;</span><br><span class="line">	padding-left: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="6-extend继承"><a href="#6-extend继承" class="headerlink" title="6. extend继承"></a>6. extend继承</h3><p>@extend 的作用是将重复使用的样式延伸给需要包含这个样式的特殊样式</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$p: padding</span><br><span class="line">p &#123;</span><br><span class="line">	$p-left: 20px;</span><br><span class="line">&#125;</span><br><span class="line">div&#123;</span><br><span class="line">	@extend p</span><br><span class="line">	border: 1px solid #aaa;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p , div &#123;</span><br><span class="line">	padding-left: 20px;</span><br><span class="line">&#125;</span><br><span class="line">div&#123;</span><br><span class="line">	border: 1px solid #aaa;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="7-控制指令"><a href="#7-控制指令" class="headerlink" title="7. 控制指令"></a>7. 控制指令</h3><h4 id="（1）-if"><a href="#（1）-if" class="headerlink" title="（1）@if"></a>（1）@if</h4><blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	@if 1 + 1 == 2 &#123;</span><br><span class="line">		border: 1px solid #aaa;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	border: 1px solid #aaa;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre>
       
     </div>
@@ -448,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/21/zhengze/" rel="next" title="常用正则表达式">
-                <i class="fa fa-chevron-left"></i> 常用正则表达式
+              <a href="/2018/08/16/wechat/" rel="next" title="从零开始自学微信小程序之路">
+                <i class="fa fa-chevron-left"></i> 从零开始自学微信小程序之路
               </a>
             
           </div>
@@ -457,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/21/js/" rel="prev" title="JavaScript 知识点">
-                JavaScript 知识点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -588,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-元素居中"><span class="nav-number">1.</span> <span class="nav-text">1.元素居中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-块状元素居中"><span class="nav-number">1.1.</span> <span class="nav-text">(1) 块状元素居中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-浮动元素居中（不提倡）"><span class="nav-number">1.2.</span> <span class="nav-text">(2) 浮动元素居中（不提倡）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-flex元素居中（超级实用）"><span class="nav-number">1.3.</span> <span class="nav-text">(3) flex元素居中（超级实用）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-伪类"><span class="nav-number">2.</span> <span class="nav-text">2.伪类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-去除input标签默认点击边框"><span class="nav-number">3.</span> <span class="nav-text">3.去除input标签默认点击边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-编写一个小三角"><span class="nav-number">4.</span> <span class="nav-text">4.编写一个小三角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-box-sizing"><span class="nav-number">5.</span> <span class="nav-text">5.box-sizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-移动端适配css插件-–-cssrem（vscode下安装步骤）"><span class="nav-number">6.</span> <span class="nav-text">6.移动端适配css插件 – cssrem（vscode下安装步骤）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-mac下-以及使用"><span class="nav-number">1.</span> <span class="nav-text">安装(mac下)以及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能"><span class="nav-number">2.</span> <span class="nav-text">功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-嵌套"><span class="nav-number">2.1.</span> <span class="nav-text">1. 嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-变量"><span class="nav-number">2.2.</span> <span class="nav-text">2. 变量 $</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-字符串"><span class="nav-number">2.3.</span> <span class="nav-text">3. 字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-运算"><span class="nav-number">2.4.</span> <span class="nav-text">4. 运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-插值语句"><span class="nav-number">2.5.</span> <span class="nav-text">5. 插值语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-extend继承"><span class="nav-number">2.6.</span> <span class="nav-text">6. extend继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-控制指令"><span class="nav-number">2.7.</span> <span class="nav-text">7. 控制指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）-if"><span class="nav-number">2.7.1.</span> <span class="nav-text">（1）@if</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
