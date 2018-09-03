@@ -1,0 +1,2842 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="杨欣舰 前端 博客 js sass vue" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="小前端的小笔记">
+<meta property="og:type" content="website">
+<meta property="og:title" content="杨欣舰的博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="杨欣舰的博客">
+<meta property="og:description" content="小前端的小笔记">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="杨欣舰的博客">
+<meta name="twitter:description" content="小前端的小笔记">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>杨欣舰的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨欣舰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-目录">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/30/knowledge/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/30/knowledge/" itemprop="url">前端必会知识点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-30T11:22:40+08:00">
+                2018-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1,930
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本章博客，梳理所有基础的css，js，html，jquery，vue等题，包含面试题，可供参考学习，也督促自我学习</p>
+<h2 id="前端和计算机基础相关知识"><a href="#前端和计算机基础相关知识" class="headerlink" title="前端和计算机基础相关知识"></a>前端和计算机基础相关知识</h2><h3 id="1-描述渐进增强和优雅降级之间的区别"><a href="#1-描述渐进增强和优雅降级之间的区别" class="headerlink" title="1. 描述渐进增强和优雅降级之间的区别"></a>1. 描述渐进增强和优雅降级之间的区别</h3><blockquote>
+<p>渐进增强：在网页开发中，先对低版本的浏览器进行css样式处理，构建页面，满足最基本的功能，在对高级浏览器进行效果，交互。写法如下：</p>
+</blockquote>
+<pre><code>.box {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+</code></pre><blockquote>
+<p>优雅降级：在网页开发中，先对高版本的浏览器进行css样式处理，构建页面，完善功能，在对低版本浏览器进行测试修复，完成基本功能。写法如下：</p>
+</blockquote>
+<pre><code>.box {
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+</code></pre><h3 id="2-浏览器兼容问题"><a href="#2-浏览器兼容问题" class="headerlink" title="2. 浏览器兼容问题"></a>2. 浏览器兼容问题</h3><h4 id="问题一：标签最低高度设置min-height不兼容"><a href="#问题一：标签最低高度设置min-height不兼容" class="headerlink" title="问题一：标签最低高度设置min-height不兼容"></a>问题一：标签最低高度设置min-height不兼容</h4><blockquote>
+<p>解决方案：</p>
+</blockquote>
+<pre><code>{
+    min-height: 200px;
+    height: auto !important;
+    height: 200px;
+    overflow: visible;
+}
+</code></pre><h4 id="问题二：H5新标签在IE9以下的浏览器不识别"><a href="#问题二：H5新标签在IE9以下的浏览器不识别" class="headerlink" title="问题二：H5新标签在IE9以下的浏览器不识别"></a>问题二：H5新标签在IE9以下的浏览器不识别</h4><blockquote>
+<p>解决方案：</p>
+</blockquote>
+<pre><code>&lt;!--[if It IE 9]--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/html5shiv.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre><ul>
+<li>html5shiv.js下载地址<a href="https://github.com/aFarkas/html5shiv/releases" target="_blank" rel="noopener">https://github.com/aFarkas/html5shiv/releases</a></li>
+</ul>
+<h4 id="问题三：被点击过的超链接不再具有hover和active属性"><a href="#问题三：被点击过的超链接不再具有hover和active属性" class="headerlink" title="问题三：被点击过的超链接不再具有hover和active属性"></a>问题三：被点击过的超链接不再具有hover和active属性</h4><blockquote>
+<p>解决方案：</p>
+</blockquote>
+<pre><code>按照lvha的顺序书写css样式
+“link”：a标签还未被访问的状态
+“visited”：a标签已被访问过的状态
+“hover”：鼠标悬浮在a标签上的状态
+“active”：a标签被按着时的状态
+</code></pre><h3 id="3-如何对网站的文件和资源进行优化？"><a href="#3-如何对网站的文件和资源进行优化？" class="headerlink" title="3. 如何对网站的文件和资源进行优化？"></a>3. 如何对网站的文件和资源进行优化？</h3><blockquote>
+<p>文件合并</p>
+</blockquote>
+<pre><code>第一种：将所有的js合并成一个大文件，所有的页面都引用。
+优点：合并简单，使用也简单；缺点：页面可能回家再到本页面不使用的代码
+
+第二种：各个页面合并生成自己所需js文件，生成多份js合并。
+优点：每个页面都用到最精确的js，不会有不相关代码；缺点：公共部分无法使用缓存优化加载，会存在大量共同js代码的冗余。
+
+第三种：合并公共大文件。
+优点：公共部分得到加载优化，每个页面引用的也尽可能的做到了不冗余；缺点：可能会存在某些页面会引用到不需要的代码
+</code></pre><blockquote>
+<p>文件压缩</p>
+</blockquote>
+<pre><code>1. 图片压缩css sprites 等
+2. 文件上传压缩
+3. 视频压缩等
+</code></pre><blockquote>
+<p>使用cdn托管资源</p>
+</blockquote>
+<pre><code>CDN的全称是Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。（百度百科）
+</code></pre><blockquote>
+<p>gizp压缩你的js和css文件</p>
+</blockquote>
+<blockquote>
+<p>使用缓存</p>
+</blockquote>
+<pre><code>getStorage setStorage
+</code></pre><blockquote>
+<p>meta标签优化（title,description,keywords）、heading标签的优化(h1-h6)、alt优化</p>
+</blockquote>
+<blockquote>
+<p>反向链接，网站外链接优化</p>
+</blockquote>
+<pre><code>网站外链一般称为导入链接/外部链接/网站反链/反向链接，通常称为外链和反链。 
+1.外链就是别的网站有指向到自己网站的链接 
+2.外链是唯一的站外优化操作方式 
+3.外链可以给你的网站带来可观的权重 
+</code></pre><h3 id="4-如何理解前后端分离？"><a href="#4-如何理解前后端分离？" class="headerlink" title="4. 如何理解前后端分离？"></a>4. 如何理解前后端分离？</h3><pre><code>前端：负责View和Controller层。
+后端：只负责Model层，业务处理/数据等。    
+</code></pre><h3 id="5-浏览器内核以及渲染引擎"><a href="#5-浏览器内核以及渲染引擎" class="headerlink" title="5. 浏览器内核以及渲染引擎"></a>5. 浏览器内核以及渲染引擎</h3><h4 id="（1）内核"><a href="#（1）内核" class="headerlink" title="（1）内核"></a>（1）内核</h4><pre><code>Firefox使用Geoko——Mozilla自主研发的渲染引擎
+Safari和Chrome都使用webkit。
+</code></pre><h4 id="（2）渲染引擎"><a href="#（2）渲染引擎" class="headerlink" title="（2）渲染引擎"></a>（2）渲染引擎</h4><pre><code>a）处理html生成DOM TREE
+b）处理css生成CSSDOM TREE
+c）DOM树与CSS-DOM树合并为Render树
+d）对Render树进行布局计算
+e）遍历Render树的每一个节点绘制到屏幕
+</code></pre><h3 id="6-浏览器的加载顺序以及repaint-reflow"><a href="#6-浏览器的加载顺序以及repaint-reflow" class="headerlink" title="6. 浏览器的加载顺序以及repaint/reflow"></a>6. 浏览器的加载顺序以及repaint/reflow</h3><h4 id="加载顺序"><a href="#加载顺序" class="headerlink" title="加载顺序"></a>加载顺序</h4><pre><code>（1）输入网址，浏览器像服务器发出请求，服务器返回html文件
+（2）浏览器载入html代码，发现head标签中有一个link引用了外部css文件
+（3）浏览器又发起css文件请求，服务器返回这个css文件
+（4）浏览器继续载入body部分的代码，而且css文件已经拿到，开始渲染页面
+（5）浏览器在代码中发现一个引用img标签的图片，开始向服务器发出请求，浏览器继续渲染后续代码，不停止等待
+（6）服务器返回图片文件，由于图片占用了一定的位置，影响了后面的排版布局，因此浏览器需要返回重新渲染代码
+（7）浏览器发现javascript标签，运行外部js文件，浏览器发起请求，服务器返回js文件
+（8）浏览器开始解析js代码，发现js中需要隐藏代码中的块（div...）,重新渲染代码
+（9）如果更改页面布局和颜色搭配，浏览器重新请求css，重新渲染
+</code></pre><h4 id="回流reflow"><a href="#回流reflow" class="headerlink" title="回流reflow"></a>回流reflow</h4><p>如果渲染树的结点发生了结构性变化，例如：宽高或者位置等，那么会触发回流reflow的逻辑。</p>
+<h4 id="重绘repaint"><a href="#重绘repaint" class="headerlink" title="重绘repaint"></a>重绘repaint</h4><p>如果渲染树的结点发生了非结构性的变化，例如：背景色等，会触发repaint重绘的逻辑。</p>
+<pre><code>document.body.style.padding = &quot;20px&quot; //reflow, repaint
+document.body.style.color = &apos;red&apos; //repaint
+</code></pre><h3 id="7-如何加快HTML的加载速度"><a href="#7-如何加快HTML的加载速度" class="headerlink" title="7. 如何加快HTML的加载速度"></a>7. 如何加快HTML的加载速度</h3><pre><code>（1）删除不必要的空格，注释
+（2）减少文件数量，压缩文件
+（3）减少域名查询，减少对外部的js，css和图片资源的引用
+（4）缓存重用数据
+（5）优化页面元素加载顺序，将图片，flash以及食品等资源最后加载
+（6）使用合法标签，杜绝使用嵌套tables，在使用图像和tables时，应当设置大小。
+</code></pre><h3 id="8-为什么使用多个域名来存储网络资源会更有效？"><a href="#8-为什么使用多个域名来存储网络资源会更有效？" class="headerlink" title="8. 为什么使用多个域名来存储网络资源会更有效？"></a>8. 为什么使用多个域名来存储网络资源会更有效？</h3><pre><code>1.CDN存储更方便
+2.突破浏览器并发限制（同一时间针对同一域名下的请求有一定的数量限制）
+3.节约cookie宽带
+4.节约主域名的连接数，优化页面响应速度
+5.防止不必要的安全问题
+</code></pre><h3 id="9-进程与线程"><a href="#9-进程与线程" class="headerlink" title="9. 进程与线程"></a>9. 进程与线程</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><pre><code>进程是具有一定独立功能的程序，是系统进行资源分配和调度的一个独立单位
+
+线程是进程的一个实体，是CPU调度和分派的基本单位，基本上不拥有系统资源
+</code></pre><h4 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h4><pre><code>一个线程可以创建和撤销另一个线程
+同一个进程中的多个线程之间可以并发执行
+</code></pre><h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><pre><code>1. 一个程序至少有一个进程，一个进程至少又一个线程
+2. 线程的划分尺度小于进程，使得多线程程序的并发行高
+3. 进程在执行过程中拥有独立的内存单元吗，而多个线程共享内存
+4. 线程不能够独立执行，必须依存在应用程序中
+</code></pre><h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><pre><code>线程执行开销小，但不利于资源的管理以及保护，进程相反
+线程适合于在SMP及其上运行，进程可以跨机器迁移 （SMP：双/多CPU处理系统）
+</code></pre><h3 id="10-http与https区别"><a href="#10-http与https区别" class="headerlink" title="10. http与https区别"></a>10. http与https区别</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/sass/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/25/sass/" itemprop="url">vue 中使用 sass</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-25T10:20:14+08:00">
+                2018-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1,229
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合 (mixins)、导入 (inline imports) 等高级功能</p>
+<h2 id="安装-mac下-以及使用"><a href="#安装-mac下-以及使用" class="headerlink" title="安装(mac下)以及使用"></a>安装(mac下)以及使用</h2><blockquote>
+<p>安装</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cnpm install node-sass --save-dev</span><br><span class="line">sudo cnpm install sass-loader --save-dev</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>使用</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt; //scoped代表只在本页应用的样式</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><h3 id="1-嵌套"><a href="#1-嵌套" class="headerlink" title="1. 嵌套"></a>1. 嵌套</h3><p>css允许将一套css样式套进另一套样式中，内层的样式为外层样式的子选择器<br>（1）普通嵌套</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">	background: red;</span><br><span class="line">	div &#123;</span><br><span class="line">		height: 30px;</span><br><span class="line">		a&#123;</span><br><span class="line">			display: block;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br><span class="line">body div &#123;</span><br><span class="line">		height: 30px;</span><br><span class="line">&#125;</span><br><span class="line">body div a&#123;</span><br><span class="line">	display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>（2）父选择器<br>scss 用 &amp; 符号代表嵌套规则外层的父选择器</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	background: red;</span><br><span class="line">	&amp;:hover &#123;</span><br><span class="line">		text-decoration: underline;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br><span class="line">a:hover &#123;</span><br><span class="line">	text-decoration: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>（3）属性嵌套<br>sass允许同一个属性嵌套在命名空间中</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	font &#123;</span><br><span class="line">		size: 28px;</span><br><span class="line">		weight: bold;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	font-size: 28px;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>（4）@import嵌套样式</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.text &#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">	@import &apos;text&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p .text&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-变量"><a href="#2-变量" class="headerlink" title="2. 变量 $"></a>2. 变量 $</h3><p>变量支持块级作用域，嵌套内定义的变量成为局部变量，只能在当前嵌套内使用，在顶层定义的变量成为全局变量，可以在所用地方使用</p>
+<ul>
+<li>!global 可以将局部变量转换为全局变量，用于结尾</li>
+</ul>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	$width: 100px !global;</span><br><span class="line">	width: $width;</span><br><span class="line">&#125;</span><br><span class="line">.container &#123;</span><br><span class="line">	width: $width;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.container &#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>!default 默认变量，不会重新赋值已经赋值的变量，但是没有赋值的变量会赋予值</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$content: &apos;a little pain&apos;</span><br><span class="line">$content: &apos;much pain&apos; !default</span><br><span class="line">$value: &apos;lover&apos;</span><br><span class="line">p:before &#123;</span><br><span class="line">	content: $content</span><br><span class="line">&#125;</span><br><span class="line">a:before&#123;</span><br><span class="line">	content: $value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>编译后css样式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p:before &#123;</span><br><span class="line">	content: a little pain</span><br><span class="line">&#125;</span><br><span class="line">a:before&#123;</span><br><span class="line">	content: &apos;lover&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-字符串"><a href="#3-字符串" class="headerlink" title="3. 字符串"></a>3. 字符串</h3><ul>
+<li>使用#{}时，有引号字符串将被编译为无引号字符串，这样便于在，，mixin中引用选择器名</li>
+</ul>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@mixin firefox-message($selector) &#123;</span><br><span class="line">	body.content #&#123;$selector&#125;:before &#123;</span><br><span class="line">		content: &apos;hi&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@include firefox-message(&apos;.header&apos;)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body.content .header:before&#123;</span><br><span class="line">	content: &apos;hi&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="4-运算"><a href="#4-运算" class="headerlink" title="4. 运算"></a>4. 运算</h3><blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-size: 20px + 10px/2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-size: 25px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="5-插值语句"><a href="#5-插值语句" class="headerlink" title="5. 插值语句"></a>5. 插值语句</h3><p>通过#{} 插值语句可以在选择器或属性名中使用变量</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$name: pig</span><br><span class="line">$p: padding</span><br><span class="line">p .$name &#123;</span><br><span class="line">	$p-left: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p .pig&#123;</span><br><span class="line">	padding-left: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="6-extend继承"><a href="#6-extend继承" class="headerlink" title="6. extend继承"></a>6. extend继承</h3><p>@extend 的作用是将重复使用的样式延伸给需要包含这个样式的特殊样式</p>
+<blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$p: padding</span><br><span class="line">p &#123;</span><br><span class="line">	$p-left: 20px;</span><br><span class="line">&#125;</span><br><span class="line">div&#123;</span><br><span class="line">	@extend p</span><br><span class="line">	border: 1px solid #aaa;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p , div &#123;</span><br><span class="line">	padding-left: 20px;</span><br><span class="line">&#125;</span><br><span class="line">div&#123;</span><br><span class="line">	border: 1px solid #aaa;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="7-控制指令"><a href="#7-控制指令" class="headerlink" title="7. 控制指令"></a>7. 控制指令</h3><h4 id="（1）-if"><a href="#（1）-if" class="headerlink" title="（1）@if"></a>（1）@if</h4><blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	@if 1 + 1 == 2 &#123;</span><br><span class="line">		border: 1px solid #aaa;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	border: 1px solid #aaa;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="（2）-for"><a href="#（2）-for" class="headerlink" title="（2）@for"></a>（2）@for</h4><blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@for $i from 1 through 3 &#123;</span><br><span class="line">	.item-#&#123;$i&#125; &#123;</span><br><span class="line">		width: 2em * $i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.item-1 &#123;</span><br><span class="line">	width: 2em;</span><br><span class="line">&#125;</span><br><span class="line">.item-2 &#123;</span><br><span class="line">	width: 4em;</span><br><span class="line">&#125;</span><br><span class="line">.item-3 &#123;</span><br><span class="line">	width: 6em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="（3）-each"><a href="#（3）-each" class="headerlink" title="（3）@each"></a>（3）@each</h4><blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@each $header, $value in (h1: red, h2: blue) &#123;</span><br><span class="line">	$header &#123;</span><br><span class="line">		color: $value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br><span class="line">h2 &#123;</span><br><span class="line">	width: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="8-混合指令"><a href="#8-混合指令" class="headerlink" title="8. 混合指令"></a>8. 混合指令</h3><p>混合指令用于定义可重复使用的样式，避免了使用无语意的 class</p>
+<h4 id="（1）定义混合样式-mixin"><a href="#（1）定义混合样式-mixin" class="headerlink" title="（1）定义混合样式@mixin"></a>（1）定义混合样式@mixin</h4><blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@mixin font-value &#123;</span><br><span class="line">	font &#123;</span><br><span class="line">		size: 12px;</span><br><span class="line">		weight: bold;</span><br><span class="line">	&#125;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="（2）引用混合样式-include"><a href="#（2）引用混合样式-include" class="headerlink" title="（2）引用混合样式@include"></a>（2）引用混合样式@include</h4><blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	@include font-value</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-size: 12px;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">	color: #fff;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="（3）混合样式带参数"><a href="#（3）混合样式带参数" class="headerlink" title="（3）混合样式带参数"></a>（3）混合样式带参数</h4><ul>
+<li><p>普通参数</p>
+<blockquote>
+<p>sass</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@mixin args ($color) &#123;</span><br><span class="line">	font &#123;</span><br><span class="line">		size: 12px;</span><br><span class="line">		weight: bold;</span><br><span class="line">	&#125;</span><br><span class="line">	color: $color</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">	@include args(#fff)</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-size: 12px;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">	color: #fff;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认参数</p>
+<blockquote>
+<p>sass</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@mixin args ($color, $value: 12px) &#123;</span><br><span class="line">	font &#123;</span><br><span class="line">		size: $value;</span><br><span class="line">		weight: bold;</span><br><span class="line">	&#125;</span><br><span class="line">	color: $color</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">	@include args(#fff, 13px)</span><br><span class="line">&#125;</span><br><span class="line">a &#123;</span><br><span class="line">	@include args(red)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-size: 13px;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line">a &#123;</span><br><span class="line">	font-size: 12px;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参数变量</p>
+<blockquote>
+<p>sass</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@mixin args ($shadow...) &#123;</span><br><span class="line">	box-shadow: $shadow...</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">	@include args(2px 3px 2px #000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	box-shadow: 2px 3px 2px #000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="（4）在混合指令中导入内容-content"><a href="#（4）在混合指令中导入内容-content" class="headerlink" title="（4）在混合指令中导入内容@content"></a>（4）在混合指令中导入内容@content</h4><blockquote>
+<p>scss样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@mixin name &#123;</span><br><span class="line">	* html &#123;</span><br><span class="line">		@content</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@include name &#123;</span><br><span class="line">	body &#123;</span><br><span class="line">		background: red;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>编译后的css样式</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* html body &#123;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/wechat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/16/wechat/" itemprop="url">从零开始自学微信小程序之路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T16:37:31+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  158
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-使用-安装"><a href="#1-使用-安装" class="headerlink" title="1. 使用/安装"></a>1. 使用/安装</h3><blockquote>
+<p>配置：在微信公众平台申请小程序账号，下载微信开发者工具，本地创建项目文件夹，并输入appid和项目名称，进入小程序项目<br>WeUI-wxss安装使用：WeUI-wxss是一套同微信原生视觉体验一致的基础样式库,设计规范参考<a href="https://github.com/weui/weui-design" target="_blank" rel="noopener">https://github.com/weui/weui-design</a></p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/Tencent/weui-wxss下载到本地（git clone https://github.com/Tencent/weui-wxss.git）</span><br><span class="line">将weui-wxss/dist/style/weui.wxss放到小程序项目的根目录下</span><br><span class="line">在项目中引用：在全局app.wxss中加入weui.wxss的引用- @import &quot;weui.wxss&quot;;</span><br></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/jquery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/11/jquery/" itemprop="url">jquery知识点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-11T16:25:27+08:00">
+                2018-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  53
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-属性拷贝"><a href="#1-属性拷贝" class="headerlink" title="1.属性拷贝"></a>1.属性拷贝</h3><blockquote>
+<p>浅拷贝(只复制一份原始对象的引用)<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var newObj = $.extend(&#123;&#125;, oldObject)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>深拷贝(对原始对象属性所引用的对象进行递归拷贝)<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var newObj = $.extend(true, &#123;&#125;, oldObject)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/11/ajax/" itemprop="url">ajax小记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-11T16:02:34+08:00">
+                2018-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  137
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-ajax实现的步骤"><a href="#1-ajax实现的步骤" class="headerlink" title="1.ajax实现的步骤"></a>1.ajax实现的步骤</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">创建XMLHttpRequest对象</span><br><span class="line">创建一个新的HTTP请求，并指定该请求的类型和验证信息</span><br><span class="line">设置相应请求状态变化的回调函数</span><br><span class="line">发送http请求</span><br><span class="line">获取异步调用返回的数据</span><br><span class="line">使用javascript和dom进行局部刷新</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-ajax实现的代码"><a href="#2-ajax实现的代码" class="headerlink" title="2.ajax实现的代码"></a>2.ajax实现的代码</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var xtr = new XMLHttpRequest()</span><br><span class="line">xtr.open(&apos;POST&apos;, url , true)</span><br><span class="line">xtr.setRequertHeader(&apos;Content-Type&apos;, &apos;application/x-www-form-urlencoded&apos;)</span><br><span class="line">xtr.onreadystatechange = function () &#123;</span><br><span class="line">	if (xhr.readyState == 4 &amp;&amp; (xhr.readyState == 200 || xhr.status == 304)) &#123;</span><br><span class="line">		fn.call(this, xhr.responseText)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">xtr.send(data)</span><br></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/vuex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/05/vuex/" itemprop="url">Vuex实现存储用户登录后的用户信息，方便在各个页面中使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T16:00:11+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  343
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-安装vuex"><a href="#1-安装vuex" class="headerlink" title="1. 安装vuex"></a>1. 安装vuex</h2><pre><code>npm install vuex --save-dev
+</code></pre><h2 id="2-建立全局store"><a href="#2-建立全局store" class="headerlink" title="2. 建立全局store"></a>2. 建立全局store</h2><h3 id="1-在src文件夹下，新建文件夹（一般我们取名store），并在该文件夹下创建存储数据的js文件。"><a href="#1-在src文件夹下，新建文件夹（一般我们取名store），并在该文件夹下创建存储数据的js文件。" class="headerlink" title="1.在src文件夹下，新建文件夹（一般我们取名store），并在该文件夹下创建存储数据的js文件。"></a>1.在src文件夹下，新建文件夹（一般我们取名store），并在该文件夹下创建存储数据的js文件。</h3><h3 id="2-在main-js文件下，我们需要将存储的数据文件设置为全局形式，方便引用"><a href="#2-在main-js文件下，我们需要将存储的数据文件设置为全局形式，方便引用" class="headerlink" title="2.在main.js文件下，我们需要将存储的数据文件设置为全局形式，方便引用"></a>2.在main.js文件下，我们需要将存储的数据文件设置为全局形式，方便引用</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import store from &apos;./你新建的文件夹文字/你文件夹下的文件名字&apos;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  router,</span><br><span class="line">  store, //这里不要忘记咯</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="3-编写js文件"><a href="#3-编写js文件" class="headerlink" title="3. 编写js文件"></a>3. 编写js文件</h2><h3 id="1-在这里，我们要先定义我们的state，用来装所需要存储的数据，初始值是空。"><a href="#1-在这里，我们要先定义我们的state，用来装所需要存储的数据，初始值是空。" class="headerlink" title="1. 在这里，我们要先定义我们的state，用来装所需要存储的数据，初始值是空。"></a>1. 在这里，我们要先定义我们的state，用来装所需要存储的数据，初始值是空。</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const state = &#123;</span><br><span class="line">	user: &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-接下来我们定义mutation，编写我们要改变的事件，去接受值，参数为两个，一个是state，一个是payLoad（就是我们要存储的所有数据）"><a href="#2-接下来我们定义mutation，编写我们要改变的事件，去接受值，参数为两个，一个是state，一个是payLoad（就是我们要存储的所有数据）" class="headerlink" title="2. 接下来我们定义mutation，编写我们要改变的事件，去接受值，参数为两个，一个是state，一个是payLoad（就是我们要存储的所有数据）"></a>2. 接下来我们定义mutation，编写我们要改变的事件，去接受值，参数为两个，一个是state，一个是payLoad（就是我们要存储的所有数据）</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const mutations = &#123;</span><br><span class="line">  setUserInfo(state, payload) &#123;</span><br><span class="line">    state.user = payload //现在我们把存储的值都放在state的user对象下</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="3-将我们的state和mutation暴漏出去，用于全局引用"><a href="#3-将我们的state和mutation暴漏出去，用于全局引用" class="headerlink" title="3. 将我们的state和mutation暴漏出去，用于全局引用"></a>3. 将我们的state和mutation暴漏出去，用于全局引用</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  mutations</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="4-登录存储"><a href="#4-登录存储" class="headerlink" title="4. 登录存储"></a>4. 登录存储</h2><p>在我们获取登录接口并且服务器返回成功后，进行数据存储</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&apos;setUserInfo&apos;, &#123;data:rep.data.data&#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="5-调用存储数据"><a href="#5-调用存储数据" class="headerlink" title="5.调用存储数据"></a>5.调用存储数据</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.state.user//输出结果就是我们存储进去的信息</span><br></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/vue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/21/vue/" itemprop="url">Vue小记知识点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-21T11:09:38+08:00">
+                2018-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  361
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-this-router-go-0-重新刷新加载页面"><a href="#1-this-router-go-0-重新刷新加载页面" class="headerlink" title="1. this.$router.go(0) 重新刷新加载页面"></a>1. this.$router.go(0) 重新刷新加载页面</h4><h4 id="2-使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天"><a href="#2-使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天" class="headerlink" title="2. 使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天"></a>2. 使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天</h4><blockquote>
+<p>解决办法，设置value-format！！！！，文档上写的是value属性，当时小坑了一下</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:value-format=&quot;yyyy-MM&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="3-axios下关于put-get-delete-post请求的三种传参方式"><a href="#3-axios下关于put-get-delete-post请求的三种传参方式" class="headerlink" title="3. axios下关于put/get/delete/post请求的三种传参方式"></a>3. axios下关于put/get/delete/post请求的三种传参方式</h4><h5 id="（1）get-put-delete-post关于path传参方式"><a href="#（1）get-put-delete-post关于path传参方式" class="headerlink" title="（1）get/put/delete/post关于path传参方式"></a>（1）get/put/delete/post关于path传参方式</h5><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.$axios.get(&quot;/hospital/ruleDicts/&quot; + 参数)</span><br><span class="line">    .then(() =&gt; &#123;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((err) =&gt; &#123;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h5 id="（2）get-put-delete-post关于body传参方式"><a href="#（2）get-put-delete-post关于body传参方式" class="headerlink" title="（2）get/put/delete/post关于body传参方式"></a>（2）get/put/delete/post关于body传参方式</h5><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">that.$axios.put(&quot;/hospital/updateRule/&quot;, &#123;</span><br><span class="line">        字段1: 参数值，</span><br><span class="line">        字段2: 参数值</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(() =&gt; &#123;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((err) =&gt; &#123;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h5 id="（3）get-put-delete-post关于query传参方式"><a href="#（3）get-put-delete-post关于query传参方式" class="headerlink" title="（3）get/put/delete/post关于query传参方式"></a>（3）get/put/delete/post关于query传参方式</h5><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">that.$axios.put(&quot;/hospital/updatePackageName/&quot;?参数字段=&quot;+参数值)</span><br><span class="line">    .then((res)=&gt;&#123;</span><br><span class="line">    &#125;,(err)=&gt;&#123;</span><br><span class="line">    &#125;).catch((error)=&gt;&#123;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="4-bus-js实现兄弟之间组件通信（官方文档中只提供了父与子通信）"><a href="#4-bus-js实现兄弟之间组件通信（官方文档中只提供了父与子通信）" class="headerlink" title="4. bus.js实现兄弟之间组件通信（官方文档中只提供了父与子通信）"></a>4. bus.js实现兄弟之间组件通信（官方文档中只提供了父与子通信）</h4><blockquote>
+<p>在文件夹中新建一个文件，随意取名，例如bus.js放在了assets文件夹（文件夹自定义）下，在bus.js文件夹下写入：</p>
+</blockquote>
+<pre><code>import Vue from &apos;vue&apos;
+export default new Vue()
+</code></pre><blockquote>
+<p>在两个要通信的兄弟组件之间引入bus.js</p>
+</blockquote>
+<pre><code>import bus from &apos;你bus.js文件存放的位置&apos;
+</code></pre><blockquote>
+<p>想要传递信息的兄弟1</p>
+</blockquote>
+<pre><code>&lt;button @click=&quot;toBus&quot;&gt;&lt;/button&gt;
+
+methods: {
+    toBus () {
+        bus.$emit(&apos;on&apos;, &apos;这个是兄弟1传给兄弟2的值&apos;)
+    }
+}
+</code></pre><blockquote>
+<p>接受传递信息的兄弟2</p>
+</blockquote>
+<pre><code>mounted () {
+    bus.$on(&apos;on&apos;, (msg) =&gt; {
+        console.log(msg) // msg就是从兄弟1接到的数据
+    })
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/21/js/" itemprop="url">JavaScript 知识点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-21T10:46:57+08:00">
+                2018-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  548
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="概念知识点"><a href="#概念知识点" class="headerlink" title="概念知识点"></a>概念知识点</h2><h4 id="1-JavaScript-实现由-核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM-构成。"><a href="#1-JavaScript-实现由-核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM-构成。" class="headerlink" title="1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。"></a>1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。</h4><h4 id="2-浏览器窗口功能以及navigator对象-location对象-screen对象，对cookie-XMLHttpRequest-ActiveXObject的支持均属于BOM"><a href="#2-浏览器窗口功能以及navigator对象-location对象-screen对象，对cookie-XMLHttpRequest-ActiveXObject的支持均属于BOM" class="headerlink" title="2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOM"></a>2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOM</h4><pre><code>navigator对象包含有关浏览器的信息，例如：版本appVersion, 名称appName, 操作系统平台platform等
+
+location对象包含有关当前URL的信息，常用：window.location.href获取当前地址或者改变新的地址/window.location.reload()重新加载当前页面
+
+screen对象包含有关客户端显示屏幕的信息，例如：window.screen.height返回屏幕的总高度
+</code></pre><h4 id="3-NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN"><a href="#3-NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN" class="headerlink" title="3.NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN"></a>3.NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN</h4><h4 id="4-–"><a href="#4-–" class="headerlink" title="4.++/–"></a>4.++/–</h4><blockquote>
+<p>–,++前置时，先运算再赋值</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = 10</span><br><span class="line">var num2 = 20</span><br><span class="line">var num3 = --num1 + num2 =&gt; num3 = 29</span><br><span class="line">var num4 = num1 + num2 =&gt; num4 = 29</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>–,++后置时，先赋值再运算</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = 10</span><br><span class="line">var num2 = 20</span><br><span class="line">var num3 = num1-- + num2 =&gt; num3 = 30</span><br><span class="line">var num4 = num1 + num2 =&gt; num4 = 29</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="5-函数中return后面的语句不会被执行"><a href="#5-函数中return后面的语句不会被执行" class="headerlink" title="5.函数中return后面的语句不会被执行"></a>5.函数中return后面的语句不会被执行</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function test () &#123;</span><br><span class="line">	return;</span><br><span class="line">	alert(1)//alert提示框永远不会弹出</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="6-深浅克隆-原生js，也可参考jquery文档下的克隆"><a href="#6-深浅克隆-原生js，也可参考jquery文档下的克隆" class="headerlink" title="6.深浅克隆(原生js，也可参考jquery文档下的克隆)"></a>6.深浅克隆(原生js，也可参考jquery文档下的克隆)</h4><blockquote>
+<p>浅克隆（简单的复制对象，如果对象其中一个属性是引用型变量，就会出现负值增生的情况，因为引用型变量保存的是内存地址，所以其实后来操作的都是同一块内存，导致了数组内容都一样。）</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var objTemplate = &#123;</span><br><span class="line">	name: &apos;pig&apos;,</span><br><span class="line">	username: &apos;杨欣舰&apos;,</span><br><span class="line">	tag: [&apos;淑女&apos;]</span><br><span class="line">&#125;//obj 为初始值对象</span><br><span class="line">function simpleCopy (obj) &#123;</span><br><span class="line">	var newobj = &#123;&#125;</span><br><span class="line">	for (var i in obj) &#123;</span><br><span class="line">		newobj[i] = obj[i]</span><br><span class="line">	&#125;</span><br><span class="line">	return newobj</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var userboy = simpleCopy(objTemplate)</span><br><span class="line">userboy.name = &apos;小龙龙&apos;</span><br><span class="line">userboy.username = &apos;龙宝&apos;</span><br><span class="line">userboy.tag.push(&apos;亲爱的&apos;)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>深度克隆（深克隆就是在克隆的时候判断一下属性的类型是不是引用型变量，如果是的话就用递归方法让它一层一层进去复制自己。）</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function deepCopy (obj, newobj) &#123;</span><br><span class="line">	var newobj = newobj || &#123;&#125;</span><br><span class="line">	for (var i in obj) &#123;</span><br><span class="line">		if (typeof obj[i] == &apos;Object&apos;) &#123;</span><br><span class="line">			newobj[i] = (obj[i].construtor === Array) ? [] : &#123;&#125;</span><br><span class="line">			deepCopy(obj[i], newobj[i])</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			newobj[i] = obj[i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return newobj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/css/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/14/css/" itemprop="url">css小技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-14T11:14:18+08:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  505
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-元素居中"><a href="#1-元素居中" class="headerlink" title="1.元素居中"></a>1.元素居中</h3><h4 id="1-块状元素居中"><a href="#1-块状元素居中" class="headerlink" title="(1) 块状元素居中"></a>(1) 块状元素居中</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	margin: o auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="2-浮动元素居中（不提倡）"><a href="#2-浮动元素居中（不提倡）" class="headerlink" title="(2) 浮动元素居中（不提倡）"></a>(2) 浮动元素居中（不提倡）</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	margin-left: -50px;</span><br><span class="line">	margin-top: -50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="3-flex元素居中（超级实用）"><a href="#3-flex元素居中（超级实用）" class="headerlink" title="(3) flex元素居中（超级实用）"></a>(3) flex元素居中（超级实用）</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">	display: flex;</span><br><span class="line">	justify-content: center; 一行下的水平居中</span><br><span class="line">	align-items: center; 多行的竖直居中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-伪类"><a href="#2-伪类" class="headerlink" title="2.伪类"></a>2.伪类</h3><p>####（1）相同class的index检索</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:last-child    检索最后一个值</span><br><span class="line">:first-child	检索第一个值</span><br><span class="line">:nth-child(index)	从头开始检索index个值，index初始值为1</span><br><span class="line">:nth-last-child(index)	从尾开始检索index个值，index为1默认倒数第一个（这个比较坑）</span><br><span class="line">:nth-child(odd)		检索基数</span><br><span class="line">:nth-child(even)	检索偶数</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>找出倒数第几个的样式，这个伪类还是很帅气的，之前写一个项目，li下面又放了一个标签，怎么调节li最后一个都不变，但是因为li有同级最后，那就不是最后一个元素，后来使用nth-last-child(2)就弄好了</p>
+</blockquote>
+<p>####（2）::before写出小三角</p>
+<pre><code> .box{
+     position: relative;
+     left:100px;
+     width: 140px;
+     min-height: 70px;
+     background: #f6dbd8;
+     -moz-border-radius: 12px;
+     -webkit-border-radius: 12px;
+     border-radius: 12px;
+     padding: 5px 10px;
+     word-wrap: break-word;
+}
+.box:before{ 三角形区域
+     position: absolute;
+     content: &quot;&quot;;
+     width: 0;
+     height: 0;
+     right: 100%;
+     top: 38px;
+     border-top: 13px solid transparent;
+     border-right: 26px solid #f6dbd8;
+     border-bottom: 13px solid transparent;
+ }
+</code></pre><h3 id="3-去除input标签默认点击边框"><a href="#3-去除input标签默认点击边框" class="headerlink" title="3.去除input标签默认点击边框"></a>3.去除input标签默认点击边框</h3><pre><code>outline: none;
+</code></pre><h3 id="4-编写一个小三角"><a href="#4-编写一个小三角" class="headerlink" title="4.编写一个小三角"></a>4.编写一个小三角</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.demo&#123;</span><br><span class="line">	width: 0;</span><br><span class="line">	height: 0;</span><br><span class="line">	border-width: 20px;</span><br><span class="line">	border-style: solid;</span><br><span class="line">	border-color: transparent tansparent red transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="5-box-sizing"><a href="#5-box-sizing" class="headerlink" title="5.box-sizing"></a>5.box-sizing</h3><blockquote>
+<p>box-sizing: content-box; //默认的标准盒模型元素效果（w3c）<br>box-sizing: border-box; //默认的怪异盒模型元素效果（ie）<br>box-sizing: inherit; //继承父元素box-sizing的属性值</p>
+</blockquote>
+<h3 id="6-移动端适配css插件-–-cssrem（vscode下安装步骤）"><a href="#6-移动端适配css插件-–-cssrem（vscode下安装步骤）" class="headerlink" title="6.移动端适配css插件 – cssrem（vscode下安装步骤）"></a>6.移动端适配css插件 – cssrem（vscode下安装步骤）</h3><pre><code>1. 在vscode的扩展商店，搜索cssrem
+2. 点击安装，安装后，点击重新加载
+3. 加载完成后，打开设置，在右边配置输入中，可以设置转换长度，&quot;cssrem-rootFontSize&quot;
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/zhengze/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/21/zhengze/" itemprop="url">常用正则表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-21T16:25:41+08:00">
+                2018-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  242
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="简单语法糖"><a href="#简单语法糖" class="headerlink" title="简单语法糖"></a>简单语法糖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&apos;^&apos;放在开头，验证是否以...开头</span><br><span class="line">&apos;$&apos;放在结尾，验证是否以...结尾</span><br><span class="line">&apos;[]&apos;验证出现过的字符</span><br><span class="line">&apos;()&apos;验证出现过的字符串</span><br><span class="line">&apos;-&apos;连接符，常用[a-z],[A-Z],[0-9],[\u4e00-\u9fa5]</span><br><span class="line">&apos;^&apos;放到中间，代表不包含</span><br></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>const ZHENG = /^a/
+const str = &apos;aaaaooo&apos;
+console.log(ZHENG.test(str))
+</code></pre><blockquote>
+<p>控制台输出：true</p>
+</blockquote>
+<h3 id="经典验证"><a href="#经典验证" class="headerlink" title="经典验证"></a>经典验证</h3><p>1.验证数字</p>
+<pre><code>^[0-9]*$
+</code></pre><p>2.验证n位的数字(字符串内容为纯数字的也支持)</p>
+<pre><code>^\d{n}$
+</code></pre><p>3.验证至少n位的数字(字符串内容为纯数字的也支持)</p>
+<pre><code>^\d{n,}$
+</code></pre><p>4.验证m-n位的数字（字符串内容为纯数字的也支持）</p>
+<pre><code>^\d{m,n}$
+</code></pre><p>5.0和非0开头的数字</p>
+<pre><code>^(0|[1-9][0-9]*)$
+</code></pre><p>6.汉字</p>
+<pre><code>^[\u4e00-\u9fa5]{0,}$
+</code></pre><p>7.长度为m-n的所有字符</p>
+<pre><code>^.{m,n}$
+</code></pre><p>8.以字母数字下划线开头的字符串</p>
+<pre><code>^[A-Za-z0-9_]$
+</code></pre><p>9.Email地址</p>
+<pre><code>^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
+</code></pre><p>10.空格</p>
+<pre><code>/\s*/g
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg"
+                alt="Sunny Yang" />
+            
+              <p class="site-author-name" itemprop="name">Sunny Yang</p>
+              <p class="site-description motion-element" itemprop="description">小前端的小笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yangxinjian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨欣舰</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">9.1k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
