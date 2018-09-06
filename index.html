@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,930
+                  2,511
                 </span>
               
 
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  7
+                  9
                 </span>
               
             </div>
@@ -513,7 +513,43 @@ document.body.style.color = &apos;red&apos; //repaint
 4. 线程不能够独立执行，必须依存在应用程序中
 </code></pre><h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><pre><code>线程执行开销小，但不利于资源的管理以及保护，进程相反
 线程适合于在SMP及其上运行，进程可以跨机器迁移 （SMP：双/多CPU处理系统）
-</code></pre><h3 id="10-http与https区别"><a href="#10-http与https区别" class="headerlink" title="10. http与https区别"></a>10. http与https区别</h3>
+</code></pre><h3 id="10-http与https区别"><a href="#10-http与https区别" class="headerlink" title="10. http与https区别"></a>10. http与https区别</h3><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><p>http是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从www服务器传输超文本到本地浏览器的传输协议，它可是使浏览器更加高效，使网络传输减少。</p>
+<h4 id="https"><a href="#https" class="headerlink" title="https"></a>https</h4><p>https是以安全为目标的http通道，简单讲是http的安全版，是由SSL+HTTP协议构建的可进行加密传输，身份认证的网络协议</p>
+<pre><code>客户端                    服务器端
+          请求https连接
+------------------------------&gt;
+          返回证书（公钥）
+&lt;------------------------------
+产生随机（对称）密钥
+使用公钥对对称钥加密
+        发送加密后的对称密钥
+------------------------------&gt;
+&lt;------------------------------
+        发送加密后的对称密钥
+------------------------------&gt;
+&lt;------------------------------
+     通过对称密钥加密的密文通信
+------------------------------&gt;
+&lt;------------------------------
+</code></pre><h4 id="区别-1"><a href="#区别-1" class="headerlink" title="区别"></a>区别</h4><pre><code>1. https协议需要到ca申请证书，一般免费证书比较少，因而需要一定费用
+2. http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议
+3. http和https使用的是完全不同的连接方式，用的端口也不是一样，前者是80，后者是443
+4. http连接很简单，无状态；https是需要加密传输，身份认证，比较安全
+</code></pre><h3 id="11-OSI七层协议-TCP-IP四层概念模型-对应网络协议"><a href="#11-OSI七层协议-TCP-IP四层概念模型-对应网络协议" class="headerlink" title="11. OSI七层协议    TCP/IP四层概念模型    对应网络协议"></a>11. OSI七层协议    TCP/IP四层概念模型    对应网络协议</h3><p>OSI先有模型，后有协议，先有标准，后进行实践；而TCP/IP是先有协议和应用在提出了模型，参照OSI模型</p>
+<pre><code>OSI七层协议             TCP/IP四层概念模型           对应网络协议
+应用层（application）       应用层                  HTTP，TFTP，FTP，NFS，WAIS，SMTP
+表示层（presentation）      应用层                  Telent...
+会话层（session）           应用层                  SMTP，DNS
+传输层（transport）         传输层                  TCP，UDP
+网络层（network）           网络层                  IP...
+数据链路层（Data Link）    数据链路层                 FDDI...
+物理层（physical）        数据链路层                 IEEE
+</code></pre><h3 id="12-https在使用上有什么注意点"><a href="#12-https在使用上有什么注意点" class="headerlink" title="12. https在使用上有什么注意点"></a>12. https在使用上有什么注意点</h3><pre><code>1. 不能部分部署https，应当应用于所有页面，否则会存在sessionID被拦截
+2. 部署https后，将任何普遍的http请求都重定向至https的url
+3. 在cookies上设置安全标记
+</code></pre><h3 id="13-http与https的性能差距"><a href="#13-http与https的性能差距" class="headerlink" title="13. http与https的性能差距"></a>13. http与https的性能差距</h3><pre><code>1. http进行tcp三次握手，而https进行tcp三次握手以及ssl握手，https的速度较http协议慢
+2. https协议的计算耗时增加
+</code></pre>
           
         
       
@@ -2343,7 +2379,7 @@ console.log(ZHENG.test(str))
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.1k</span>
+    <span title="Site words total count">9.7k</span>
   
 </div>
 
