@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="杨欣舰的博客">
 <meta property="og:description" content="本章博客，梳理所有基础的css，js，html，jquery，vue等题，包含面试题，可供参考学习，也督促自我学习 前端和计算机基础相关知识1. 描述渐进增强和优雅降级之间的区别 渐进增强：在网页开发中，先对低版本的浏览器进行css样式处理，构建页面，满足最基本的功能，在对高级浏览器进行效果，交互。写法如下：  .box {     -webkit-border-radius: 2px;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-06T08:18:44.630Z">
+<meta property="og:updated_time" content="2018-09-11T08:35:24.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端必会知识点">
 <meta name="twitter:description" content="本章博客，梳理所有基础的css，js，html，jquery，vue等题，包含面试题，可供参考学习，也督促自我学习 前端和计算机基础相关知识1. 描述渐进增强和优雅降级之间的区别 渐进增强：在网页开发中，先对低版本的浏览器进行css样式处理，构建页面，满足最基本的功能，在对高级浏览器进行效果，交互。写法如下：  .box {     -webkit-border-radius: 2px;">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2,511
+                  3,923
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  9
+                  16
                 </span>
               
             </div>
@@ -545,7 +545,212 @@ document.body.style.color = &apos;red&apos; //repaint
 3. 在cookies上设置安全标记
 </code></pre><h3 id="13-http与https的性能差距"><a href="#13-http与https的性能差距" class="headerlink" title="13. http与https的性能差距"></a>13. http与https的性能差距</h3><pre><code>1. http进行tcp三次握手，而https进行tcp三次握手以及ssl握手，https的速度较http协议慢
 2. https协议的计算耗时增加
-</code></pre>
+</code></pre><h3 id="14-常见排序算法"><a href="#14-常见排序算法" class="headerlink" title="14. 常见排序算法"></a>14. 常见排序算法</h3><pre><code>算法            最优复杂度          最差复杂度          平均复杂度          稳定性
+冒泡排序          O(n^2)            O(n^2)             O(n^2)           稳定
+插入排序          O(n)              O(n^2)             O(n^2)           稳定
+选择排序          O(n^2)            O(n^2)             O(n^2)           不稳定
+快速排序          O(nlogn)          O(n^2)             O(nlogn)         不稳定
+希尔排序          O(n)              O(n^2)             O(n^1.4)         不稳定
+归并排序          O(nlogn)          O(nlogn)           O(nlogn)         稳定
+堆排序           O(nlogn)          O(nlogn)           O(nlogn)         稳定
+</code></pre><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p>每次将相邻的两个元素进行比较，将较小的元素放到前面</p>
+<pre><code>bubbleSort (arr) {
+    for (let i = 0; i &lt; arr.length - 1; i ++) {
+        for (let j = 0; j &lt; arr.length - i - 1; j++) {
+            if (arr[j] &gt; arr[j + 1]) {
+                let swap = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = swap
+            }
+        }
+    }
+}
+
+83  85  81  18  98
+83  81  18  85  98
+81  18  83  85  98
+18  81  83  85  98
+</code></pre><h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><p>快速排序是冒泡排序的一种改进，第一趟排序时将数据分成两个部分，一个部分比另一个部分的所有数据都要小，然后递归调用，在两边都实现快速排序</p>
+<pre><code>quickSort (elements) {
+    if (elements.length &lt;= 1) {
+        return elements
+    }
+    let pivotIndex = Math.floor(elements.length / 2)
+    let pivot = elements.splice(pivotIndex, 1)[0]  // 删除中间值，形成新的数组并返回删除值
+    let left = []
+    let right = []
+    elements.forEach(item =&gt; {
+        if (item &lt; pivot) {
+            left.push(item)
+        } else {
+            right.push(item)
+        }
+    })
+    return quickSort(left).concat([pivot], quickSort(right))
+}
+
+29 39 13 33 30 12 34 14
+13 12 14 29 39 33 30 34
+12 13 14 29 33 30 34 39
+12 13 14 29 30 33 34 39
+</code></pre><h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p>从第一个元素开始，该元素可以认为已经被排序，取出下一个元素，在已经排序的元素序列中从后向前扫描，如果该元素大于新元素，将该元素移到下一个位置，知道找到已排序的元素小雨或者等于新元素的位置，将新元素插入到下一个位置中，继续扫描</p>
+<pre><code>sort (elements) {
+    for (let i = 1; i &lt; elements.length; i++) {
+        let key = elements[i]
+        let j = i - 1
+        while (elements[j] &gt; key) {
+            elements[j + 1] = elements[j]
+        }
+        elements[j + 1] = key
+    }
+    return elements
+}
+
+20 19 21 34 53 11 31 49 58
+19 20 21 34 53 11 31 49 58
+11 19 20 21 34 53 31 49 58
+11 19 20 21 31 34 53 49 58
+11 19 20 21 31 34 49 53 58
+</code></pre><h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>在要排序的一组数中，选出最小的一个数与第一个数的位置交换，然后在剩下的数中再找最小的与第2的交换，知道由小到大排序为止</p>
+<pre><code>selectSort (elements) {
+    for (let i = 0; i &lt; elements.length; i++) {
+        let minIndex = i
+        for (let j = i + 1; j &lt; elements.length; j++) {
+            if (elements[j] &lt; arr[minIndex]) {
+                minIndex = j
+            }
+        }
+        let temp = elements[i]
+        elements[i] = elements[minIndex]
+        elements[minIndex] = temp
+    }
+    return elements
+}
+
+20 19 21 34 53 11 31 49 58
+11 19 21 34 53 20 31 49 58
+11 19 20 34 53 21 31 49 58
+11 19 20 21 53 34 31 49 58
+11 19 20 21 31 34 53 49 58
+11 19 20 21 31 34 49 53 58
+</code></pre><h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序，随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法终止</p>
+<pre><code>shellArr (arr) {
+    let len = arr.length,
+        temp = 1,
+        gap = 1
+    while (gap &lt; len / 5) {
+        gap = gap * len + 1
+    }
+    for (gap; gap &gt; 0; gap = Math.floor(gap / 5)) {
+        for (let i = gap; i &lt; len; i ++) {
+            temp = arr[i]
+            for (let j = i - gap; j &gt;= 0 &amp;&amp; arr[j] &gt; temp; j -= gap) {
+                arr[j + gap] = arr[j]
+            }
+            arr[j + gap] = temp
+        }
+    }
+    return arr
+}
+
+ 8 9 1 7 2 3 5 4 6 0 //gap = 10 / 5 = 2 =&gt; 分为五组，隔四个的两个值排序
+ 3 5 1 6 0 8 9 4 7 2 //gap = 5 / 2 = 2 =&gt; 分为两组，隔一个的五个值进行直接插入排序
+ 0 2 1 4 3 5 7 6 9 8 //gap = 2 / 2 = 1 =&gt; 一个一个插入排序
+ 0 1 2 3 4 5 6 7 8 9
+</code></pre><h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><p>归并排序是一种稳定的排序方法，将已有序的子序列合并，得到完全有序的序列，即先使每个子序列有序，再使子序列段间有序</p>
+<pre><code>mergeSort (arr) {
+    let len = arr.length
+    if (len &lt; 2) {
+        return arr
+    }
+    let middle = Math.floor(len / 2),
+        left = arr.slice(0, middle),
+        right = arr.slice(middle)
+    return merge(mergeSort(left),mergeSort(right))
+}//分
+merge (left, right) {
+    let result = []
+    while (left.length &amp;&amp; right.length) {
+        if (left[0] &lt;= right[0]) {
+            result.push(left.shift())
+        } else {
+            result.push(right.shift())
+        }
+    }
+    while (left.length) {
+        result.push(left.shift())
+    }
+    while (right.length) {
+        result.push(right.shift())
+    }
+}
+
+8 9 1 7 2 3 5 4 6 0
+8 9 7 1 2 3 4 5 0 6
+8 9 1 2 7 3 4 0 5 6 
+1 2 7 8 9 0 3 4 5 6
+0 1 2 3 4 5 6 7 8 9
+</code></pre><h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>堆排序可以把每一趟元素的比较结果保存下来，以便我们在选择最小/大元素时对已经比较过的元素做出相应调整。  </p>
+<ol>
+<li>将长度为n的待排序的数组进行有序化构造成一个大顶堆  </li>
+<li>将根结点与尾节点交换并输出此时的尾节点</li>
+<li>将剩余的n-1个节点重新进行堆有序化</li>
+<li><p>重复步骤2， 步骤3直至构造成一个有序列表</p>
+<p> heapSort (arr) {</p>
+<pre><code>let heapSize = arr.length,
+    temp;
+for (let i = Math.floor(heapSize / 2) - 1; i &gt;= 0; i--) {
+    heapify(arr, i, heapSize)
+}
+for (let j = heapSize - 1; j &gt;= 1; j--) {
+    temp = arr[0]
+    arr[0] = arr[j]
+    arr[j] = temp;
+    heapify(arr, 0, --heapSize)
+}
+return arr;
+</code></pre><p> }</p>
+<p> heapify (arr, x , len) {</p>
+<pre><code>let l = 2 * x + 1,
+    r = 2 * x + 2,
+    largest = x,
+    temp;
+if (l &lt; len &amp;&amp; arr[l] &gt; arr[largest]) {
+    largest = 1
+}
+if (r &lt; len &amp;&amp; arr[r] &gt; arr[largest]) {
+    largest = r
+}
+if (largest != x) {
+    temp = arr[x]
+    arr[x] = arr[largest]
+    arr[largest] = temp
+    heapify(arr, lengest, len)
+}
+</code></pre><p> }</p>
+<p> 20 50 10 30 70 20 80</p>
+<pre><code>      20                              20
+  50      10         ====》       50       80
+30  70  20  80                  30  70   20  10
+
+                                      ||
+                                      ||
+
+      80                              20
+  70      20       《====         70       80
+30  50  20  10                  30  50   20  10
+
+      ||
+      ||
+
+      10                              10
+  70      20       ====》         20       20
+30  50  20  80                  30  50   70  80
+
+10 20 20 30 50 70 80 
+</code></pre></li>
+</ol>
+
       
     </div>
     
@@ -705,7 +910,7 @@ document.body.style.color = &apos;red&apos; //repaint
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端和计算机基础相关知识"><span class="nav-number">1.</span> <span class="nav-text">前端和计算机基础相关知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-描述渐进增强和优雅降级之间的区别"><span class="nav-number">1.1.</span> <span class="nav-text">1. 描述渐进增强和优雅降级之间的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-浏览器兼容问题"><span class="nav-number">1.2.</span> <span class="nav-text">2. 浏览器兼容问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题一：标签最低高度设置min-height不兼容"><span class="nav-number">1.2.1.</span> <span class="nav-text">问题一：标签最低高度设置min-height不兼容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题二：H5新标签在IE9以下的浏览器不识别"><span class="nav-number">1.2.2.</span> <span class="nav-text">问题二：H5新标签在IE9以下的浏览器不识别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题三：被点击过的超链接不再具有hover和active属性"><span class="nav-number">1.2.3.</span> <span class="nav-text">问题三：被点击过的超链接不再具有hover和active属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何对网站的文件和资源进行优化？"><span class="nav-number">1.3.</span> <span class="nav-text">3. 如何对网站的文件和资源进行优化？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何理解前后端分离？"><span class="nav-number">1.4.</span> <span class="nav-text">4. 如何理解前后端分离？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-浏览器内核以及渲染引擎"><span class="nav-number">1.5.</span> <span class="nav-text">5. 浏览器内核以及渲染引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）内核"><span class="nav-number">1.5.1.</span> <span class="nav-text">（1）内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）渲染引擎"><span class="nav-number">1.5.2.</span> <span class="nav-text">（2）渲染引擎</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-浏览器的加载顺序以及repaint-reflow"><span class="nav-number">1.6.</span> <span class="nav-text">6. 浏览器的加载顺序以及repaint/reflow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加载顺序"><span class="nav-number">1.6.1.</span> <span class="nav-text">加载顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回流reflow"><span class="nav-number">1.6.2.</span> <span class="nav-text">回流reflow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重绘repaint"><span class="nav-number">1.6.3.</span> <span class="nav-text">重绘repaint</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-如何加快HTML的加载速度"><span class="nav-number">1.7.</span> <span class="nav-text">7. 如何加快HTML的加载速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-为什么使用多个域名来存储网络资源会更有效？"><span class="nav-number">1.8.</span> <span class="nav-text">8. 为什么使用多个域名来存储网络资源会更有效？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-进程与线程"><span class="nav-number">1.9.</span> <span class="nav-text">9. 进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系"><span class="nav-number">1.9.2.</span> <span class="nav-text">关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区别"><span class="nav-number">1.9.3.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优缺点"><span class="nav-number">1.9.4.</span> <span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-http与https区别"><span class="nav-number">1.10.</span> <span class="nav-text">10. http与https区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#http"><span class="nav-number">1.10.1.</span> <span class="nav-text">http</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#https"><span class="nav-number">1.10.2.</span> <span class="nav-text">https</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区别-1"><span class="nav-number">1.10.3.</span> <span class="nav-text">区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-OSI七层协议-TCP-IP四层概念模型-对应网络协议"><span class="nav-number">1.11.</span> <span class="nav-text">11. OSI七层协议    TCP/IP四层概念模型    对应网络协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-https在使用上有什么注意点"><span class="nav-number">1.12.</span> <span class="nav-text">12. https在使用上有什么注意点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-http与https的性能差距"><span class="nav-number">1.13.</span> <span class="nav-text">13. http与https的性能差距</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端和计算机基础相关知识"><span class="nav-number">1.</span> <span class="nav-text">前端和计算机基础相关知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-描述渐进增强和优雅降级之间的区别"><span class="nav-number">1.1.</span> <span class="nav-text">1. 描述渐进增强和优雅降级之间的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-浏览器兼容问题"><span class="nav-number">1.2.</span> <span class="nav-text">2. 浏览器兼容问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题一：标签最低高度设置min-height不兼容"><span class="nav-number">1.2.1.</span> <span class="nav-text">问题一：标签最低高度设置min-height不兼容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题二：H5新标签在IE9以下的浏览器不识别"><span class="nav-number">1.2.2.</span> <span class="nav-text">问题二：H5新标签在IE9以下的浏览器不识别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题三：被点击过的超链接不再具有hover和active属性"><span class="nav-number">1.2.3.</span> <span class="nav-text">问题三：被点击过的超链接不再具有hover和active属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何对网站的文件和资源进行优化？"><span class="nav-number">1.3.</span> <span class="nav-text">3. 如何对网站的文件和资源进行优化？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何理解前后端分离？"><span class="nav-number">1.4.</span> <span class="nav-text">4. 如何理解前后端分离？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-浏览器内核以及渲染引擎"><span class="nav-number">1.5.</span> <span class="nav-text">5. 浏览器内核以及渲染引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）内核"><span class="nav-number">1.5.1.</span> <span class="nav-text">（1）内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）渲染引擎"><span class="nav-number">1.5.2.</span> <span class="nav-text">（2）渲染引擎</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-浏览器的加载顺序以及repaint-reflow"><span class="nav-number">1.6.</span> <span class="nav-text">6. 浏览器的加载顺序以及repaint/reflow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加载顺序"><span class="nav-number">1.6.1.</span> <span class="nav-text">加载顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回流reflow"><span class="nav-number">1.6.2.</span> <span class="nav-text">回流reflow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重绘repaint"><span class="nav-number">1.6.3.</span> <span class="nav-text">重绘repaint</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-如何加快HTML的加载速度"><span class="nav-number">1.7.</span> <span class="nav-text">7. 如何加快HTML的加载速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-为什么使用多个域名来存储网络资源会更有效？"><span class="nav-number">1.8.</span> <span class="nav-text">8. 为什么使用多个域名来存储网络资源会更有效？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-进程与线程"><span class="nav-number">1.9.</span> <span class="nav-text">9. 进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系"><span class="nav-number">1.9.2.</span> <span class="nav-text">关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区别"><span class="nav-number">1.9.3.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优缺点"><span class="nav-number">1.9.4.</span> <span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-http与https区别"><span class="nav-number">1.10.</span> <span class="nav-text">10. http与https区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#http"><span class="nav-number">1.10.1.</span> <span class="nav-text">http</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#https"><span class="nav-number">1.10.2.</span> <span class="nav-text">https</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区别-1"><span class="nav-number">1.10.3.</span> <span class="nav-text">区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-OSI七层协议-TCP-IP四层概念模型-对应网络协议"><span class="nav-number">1.11.</span> <span class="nav-text">11. OSI七层协议    TCP/IP四层概念模型    对应网络协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-https在使用上有什么注意点"><span class="nav-number">1.12.</span> <span class="nav-text">12. https在使用上有什么注意点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-http与https的性能差距"><span class="nav-number">1.13.</span> <span class="nav-text">13. http与https的性能差距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-常见排序算法"><span class="nav-number">1.14.</span> <span class="nav-text">14. 常见排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.14.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速排序"><span class="nav-number">1.14.2.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入排序"><span class="nav-number">1.14.3.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择排序"><span class="nav-number">1.14.4.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#希尔排序"><span class="nav-number">1.14.5.</span> <span class="nav-text">希尔排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归并排序"><span class="nav-number">1.14.6.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">1.14.7.</span> <span class="nav-text">堆排序</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -739,7 +944,7 @@ document.body.style.color = &apos;red&apos; //repaint
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.7k</span>
+    <span title="Site words total count">11.1k</span>
   
 </div>
 
