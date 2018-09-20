@@ -286,6 +286,231 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/es6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/20/es6/" itemprop="url">es6小记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-20T16:36:25+08:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  333
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h3><h4 id="let-定义变量-const-定义常量，常量定义一次后，不可更改"><a href="#let-定义变量-const-定义常量，常量定义一次后，不可更改" class="headerlink" title="let 定义变量, const 定义常量，常量定义一次后，不可更改"></a>let 定义变量, const 定义常量，常量定义一次后，不可更改</h4><pre><code>let r = 2
+r = 4
+console.log(r)   r =====&gt; 4
+
+const pi = 3.14
+pi = 3.2
+console.log(pi)  报错Assignment to constant variable.
+</code></pre><h4 id="不可重复定义"><a href="#不可重复定义" class="headerlink" title="不可重复定义"></a>不可重复定义</h4><pre><code>var foo = 1
+var foo = 2
+console.log(foo)  foo =====&gt; 2
+
+let foo = 1
+let foo = 2
+console.log(foo)  报错Identifier &apos;foo&apos; has already 
+</code></pre><h4 id="块级定义域"><a href="#块级定义域" class="headerlink" title="块级定义域"></a>块级定义域</h4><pre><code>事例 1:
+if (true) {
+    var test = 1
+}
+console.log(test)   test =====&gt; 1
+
+if (true) {
+    let test1 = 1
+}
+console.log(test1)  报错ReferenceError: test1 is not defined
+
+事例 2:
+let arr = [1, 2, 3, 4]
+for (var i = 0; i &lt; arr.length; i++) {
+    // do nothing
+}
+console.log(i)  i =====&gt; 4
+
+for (let j = 0; j &lt; arr.length; j++) {
+    // do nothing
+}
+console.log(j)  j =====&gt; ReferenceError: j is not defined
+</code></pre><h4 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h4><pre><code>console.log(names)
+var names = &apos;pig&apos; 
+names ======&gt; undefined
+因为var存在变量提示，实际代码操作如下：
+var names;
+console.log(names)
+names = &apos;pig&apos;
+
+console.log(age)
+let age = 10
+age =====&gt; Identifier &apos;age&apos; has already been declared
+</code></pre><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><h4 id="参数-gt-表达式-语句"><a href="#参数-gt-表达式-语句" class="headerlink" title="参数 =&gt; 表达式/语句"></a>参数 =&gt; 表达式/语句</h4><pre><code>let value1 = 1;
+let double = x =&gt; 2 * x;  // x为参数
+let treble = x =&gt; {
+    return 3 * x;
+}
+console.log(double(value1))  =====&gt; 2
+console.log(treble(value1))  =====&gt; 3
+</code></pre><h4 id="继承外层作用域，没有自己的this指针，没有独立作用域"><a href="#继承外层作用域，没有自己的this指针，没有独立作用域" class="headerlink" title="继承外层作用域，没有自己的this指针，没有独立作用域"></a>继承外层作用域，没有自己的this指针，没有独立作用域</h4><pre><code>var obj = {
+    commonFn: function () {
+        console.log(this)
+    },
+    arrowFn: () =&gt; {
+        console.log(this)
+    }
+}
+obj.commonFn() // this指向obj
+    输出： {
+        commonFn: function () {
+        },
+        arrowFn: () =&gt; {
+        }
+    }
+obj.arrowFn() // // this指向obj的作用域，也就是windows
+    输出： {
+        window {
+            ...
+        }
+    }
+</code></pre><h4 id="不能用作构造函数，不能用new生成一个对象"><a href="#不能用作构造函数，不能用new生成一个对象" class="headerlink" title="不能用作构造函数，不能用new生成一个对象"></a>不能用作构造函数，不能用new生成一个对象</h4><h4 id="没有prototype属性"><a href="#没有prototype属性" class="headerlink" title="没有prototype属性"></a>没有prototype属性</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/30/knowledge/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -349,7 +574,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3,923
+                  5,419
                 </span>
               
 
@@ -365,7 +590,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  16
+                  22
                 </span>
               
             </div>
@@ -549,7 +774,8 @@ document.body.style.color = &apos;red&apos; //repaint
 3. 在cookies上设置安全标记
 </code></pre><h3 id="13-http与https的性能差距"><a href="#13-http与https的性能差距" class="headerlink" title="13. http与https的性能差距"></a>13. http与https的性能差距</h3><pre><code>1. http进行tcp三次握手，而https进行tcp三次握手以及ssl握手，https的速度较http协议慢
 2. https协议的计算耗时增加
-</code></pre><h3 id="14-常见排序算法"><a href="#14-常见排序算法" class="headerlink" title="14. 常见排序算法"></a>14. 常见排序算法</h3><pre><code>算法            最优复杂度          最差复杂度          平均复杂度          稳定性
+</code></pre><h3 id="14-常见排序算法"><a href="#14-常见排序算法" class="headerlink" title="14. 常见排序算法"></a>14. 常见排序算法</h3><p>时间复杂度： 指执行算法所需要的计算工作量，也就是语句执行次数<br>1.用常数1代替运行实践中的所有加法常数<br>2.修改后的运行次数函数中，只保留最高阶级<br>3.去除最高阶项的系数<br>for: O(n)    for+for: O(n^2)    while: O(logn)</p>
+<pre><code>算法            最优复杂度          最差复杂度          平均复杂度          稳定性
 冒泡排序          O(n^2)            O(n^2)             O(n^2)           稳定
 插入排序          O(n)              O(n^2)             O(n^2)           稳定
 选择排序          O(n^2)            O(n^2)             O(n^2)           不稳定
@@ -694,67 +920,113 @@ merge (left, right) {
 8 9 1 2 7 3 4 0 5 6 
 1 2 7 8 9 0 3 4 5 6
 0 1 2 3 4 5 6 7 8 9
-</code></pre><h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>堆排序可以把每一趟元素的比较结果保存下来，以便我们在选择最小/大元素时对已经比较过的元素做出相应调整。  </p>
-<ol>
-<li>将长度为n的待排序的数组进行有序化构造成一个大顶堆  </li>
-<li>将根结点与尾节点交换并输出此时的尾节点</li>
-<li>将剩余的n-1个节点重新进行堆有序化</li>
-<li><p>重复步骤2， 步骤3直至构造成一个有序列表</p>
-<p> heapSort (arr) {</p>
-<pre><code>let heapSize = arr.length,
-    temp;
-for (let i = Math.floor(heapSize / 2) - 1; i &gt;= 0; i--) {
-    heapify(arr, i, heapSize)
+</code></pre><h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>堆排序可以把每一趟元素的比较结果保存下来，以便我们在选择最小/大元素时对已经比较过的元素做出相应调整。<br>1.将长度为n的待排序的数组进行有序化构造成一个大顶堆<br>2.将根结点与尾节点交换并输出此时的尾节点<br>3.将剩余的n-1个节点重新进行堆有序化<br>4.重复步骤2， 步骤3直至构造成一个有序列表</p>
+<pre><code>heapSort (arr) {
+    let heapSize = arr.length,
+        temp;
+    for (let i = Math.floor(heapSize / 2) - 1; i &gt;= 0; i--) {
+        heapify(arr, i, heapSize)
+    }
+    for (let j = heapSize - 1; j &gt;= 1; j--) {
+        temp = arr[0]
+        arr[0] = arr[j]
+        arr[j] = temp;
+        heapify(arr, 0, --heapSize)
+    }
+    return arr;
 }
-for (let j = heapSize - 1; j &gt;= 1; j--) {
-    temp = arr[0]
-    arr[0] = arr[j]
-    arr[j] = temp;
-    heapify(arr, 0, --heapSize)
-}
-return arr;
-</code></pre><p> }</p>
-<p> heapify (arr, x , len) {</p>
-<pre><code>let l = 2 * x + 1,
-    r = 2 * x + 2,
-    largest = x,
-    temp;
-if (l &lt; len &amp;&amp; arr[l] &gt; arr[largest]) {
-    largest = 1
-}
-if (r &lt; len &amp;&amp; arr[r] &gt; arr[largest]) {
-    largest = r
-}
-if (largest != x) {
-    temp = arr[x]
-    arr[x] = arr[largest]
-    arr[largest] = temp
-    heapify(arr, lengest, len)
-}
-</code></pre><p> }</p>
-<p> 20 50 10 30 70 20 80</p>
-<pre><code>      20                              20
-  50      10         ====》       50       80
-30  70  20  80                  30  70   20  10
 
-                                      ||
-                                      ||
+heapify (arr, x , len) {
+    let l = 2 * x + 1,
+        r = 2 * x + 2,
+        largest = x,
+        temp;
+    if (l &lt; len &amp;&amp; arr[l] &gt; arr[largest]) {
+        largest = 1
+    }
+    if (r &lt; len &amp;&amp; arr[r] &gt; arr[largest]) {
+        largest = r
+    }
+    if (largest != x) {
+        temp = arr[x]
+        arr[x] = arr[largest]
+        arr[largest] = temp
+        heapify(arr, lengest, len)
+    }
+}
 
-      80                              20
-  70      20       《====         70       80
-30  50  20  10                  30  50   20  10
+20 50 10 30 70 20 80
+            20                              20
+        50      10         ====》       50       80
+      30  70  20  80                  30  70   20  10
 
-      ||
-      ||
+                                            ||
+                                            ||
 
-      10                              10
-  70      20       ====》         20       20
-30  50  20  80                  30  50   70  80
+            80                              20
+        70      20       《====         70       80
+      30  50  20  10                  30  50   20  10
+
+            ||
+            ||
+
+            10                              10
+        70      20       ====》         20       20
+      30  50  20  80                  30  50   70  80
 
 10 20 20 30 50 70 80 
-</code></pre></li>
-</ol>
+</code></pre><h3 id="15-TCP握手协议"><a href="#15-TCP握手协议" class="headerlink" title="15.TCP握手协议"></a>15.TCP握手协议</h3><h4 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h4><pre><code>第一次握手：建立连接时，客户端发生syn包（syn=j）到服务器，并进入SYN_SEND状态，等待服务器确认；
+          syn（同步序列编号）
+第二次握手：服务器收到syn包，必须确认客户的syn（ack=j+1)，同时自己也发送一个syn包（syn=k），即syn+ack包，此时服务器进入syn_recv状态
+第三次握手：客户端收到服务器的syn+ack包，向服务器发送确认包ack（ack=k+1),此包发送完毕，客户端和服务器进入established状态，完成三次握手
+完成三次握手后，客户端与服务端开始传送数据
+</code></pre><h4 id="TCP四次握手（挥手）"><a href="#TCP四次握手（挥手）" class="headerlink" title="TCP四次握手（挥手）"></a>TCP四次握手（挥手）</h4><pre><code>第一次挥手：客户端发送一个fin，用来关闭客户端到服务器端的数据传送，客户端进入fin_wait_1状态
+第二次挥手：服务器收到fin后，发送一个ack，确认序号为收到的序号+1，和syn一样，一个fin占用一个序号
+第三次挥手：服务器关闭与客户端a的连接，发送一个fin给客户端a
+第四次挥手：客户端a发回ack报文确认，并将确认序号设置为收到序号+1
+</code></pre><h4 id="为什么建立协议是三次握手，关闭连接却是四次握手？"><a href="#为什么建立协议是三次握手，关闭连接却是四次握手？" class="headerlink" title="为什么建立协议是三次握手，关闭连接却是四次握手？"></a>为什么建立协议是三次握手，关闭连接却是四次握手？</h4><pre><code>这是因为服务器端的listen状态下的socket当收到syn报文的建连请求后，它可以把ack和syn（ack起应答作用，而syn起同步作用）放在一个报文里来发送，但关闭连接时，当收到对方的fin报文通知时，它仅仅表示对方没有数据发送给你，但未必你所有的数据全部发送给对方了，所以你可以未必会马上关闭socket，也即你可能还需要发送一些数据给对方之后买发送fin报文来表示你同意现在可以关闭连接了，所有他这里的ack报文和fin报文多数情况下都是分开发送的。
+</code></pre><h3 id="16-http请求头有哪儿些字段"><a href="#16-http请求头有哪儿些字段" class="headerlink" title="16.http请求头有哪儿些字段"></a>16.http请求头有哪儿些字段</h3><pre><code>Accept: 浏览器能够处理的内容类型（ text/html, application/xhtml+xml ）
+Accept-Charset：浏览器能识别的字符集（ utf-8 ）
+Accept-Encoding：浏览器可以处理的编码方式（ gzip, deflate ）
+Accept-Language：浏览器接受的语言（ zh-CN ）
+Cookie：浏览器向服务器发送请求时发送cookie（ user=admin ）
+Content-Type：请求体中的内容的mime类型（ application/x-www-form-urlencoded ）
+Date：发送请求时的GMT时间（ Tue， 15 Nov 2018 14:43:37 GMT ）
+Host：被服务器的域名或IP地址（ Host：www.xxx.com:8080 ）
+Referer：指当前请求的URL是在什么地址引用的（ 点击超链接的请求的referer为当前超链接所在页面 ）
+</code></pre><h3 id="17-http响应头有哪儿些字段"><a href="#17-http响应头有哪儿些字段" class="headerlink" title="17.http响应头有哪儿些字段"></a>17.http响应头有哪儿些字段</h3><pre><code>allow：对某网络资源的有效的请求行为
+age：从原始服务器到代理缓存形成的估算时间（以秒计，非负） 
+Access-Control-Allow-Headers: x-requested-with, Content-Type, Authorization, token
+Access-Control-Allow-Methods: POST, GET, PUT, OPTIONS, DELETE
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 3600
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 19 Sep 2018 06:56:58 GMT
+Transfer-Encoding: 文件传输编码（ chunked ）
+</code></pre><h3 id="18-http1-1和http1-0的区别"><a href="#18-http1-1和http1-0的区别" class="headerlink" title="18.http1.1和http1.0的区别"></a>18.http1.1和http1.0的区别</h3><pre><code>http1.0：每次请求和响应都需要建立一个单独的连接，每次连接只是传输一个对象，严重影响客户机和服务器的性能
+http1.1：支持持久连接（keep-alive/close），在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟，增加了更多的请求头和响应头来改进和扩充http1.0的功能，增加了host请求投字段后，实现了在一台web服务器上可以在同一个ip地址和端口号上使用不同主机名来创建多个虚拟web站点，新增身份认证（authentication）
+</code></pre><h3 id="19-三种禁止浏览器缓存的头字段以及设置指"><a href="#19-三种禁止浏览器缓存的头字段以及设置指" class="headerlink" title="19.三种禁止浏览器缓存的头字段以及设置指"></a>19.三种禁止浏览器缓存的头字段以及设置指</h3><pre><code>Expires: 0
+Cache-Control: no-cache
+Pragma: no-cache
+</code></pre><h3 id="20-常用的http状态码列表"><a href="#20-常用的http状态码列表" class="headerlink" title="20.常用的http状态码列表"></a>20.常用的http状态码列表</h3><pre><code>100: Continue，客户端应继续其请求
+200: OK，请求成功，一般用于get与post请求
+304: Not Modified，未修改，所请求的资源未修改，服务器返回此状态码时，不会返回任何资源，可以直接只用浏览器缓存
+305: Use Proxy，使用代理，所请求的资源必须通过代理访问
+400: Bad Request，客户端请求的语法错误，服务器无法理解
+401: Unauthorized，请求要求用户的身份认证
+403: Forbidden，服务器理解请求客户端的去部分请求，但是拒绝执行次请求
+404: Not Found，服务器无法根据客户端的请求找到资源（网页）
+500: Internal Server Error，服务器内部错误，无法完成请求
+502: Bad Gateway，充当网管或代理的服务器，从远端服务器接收到了一个无效的请求
+503: Service Unavailable，由于超载或系统维护，服务器暂时的无法处理客户端的请求
+</code></pre><h3 id="21-DNS-prefetch"><a href="#21-DNS-prefetch" class="headerlink" title="21.DNS-prefetch"></a>21.DNS-prefetch</h3><p>dns: 域名解析，将url地址的域名解析成ip地址</p>
+<p>dns prefetch是一种dns预解析技术，当浏览网页时，浏览器会在加载网页时对网页中的域名进行解析缓存，这样在单击当前网页中的连接时就无需进行dns的解析，减少用户等待时间，提高用户体验</p>
+<h4 id="设置dns-prefetch"><a href="#设置dns-prefetch" class="headerlink" title="设置dns-prefetch"></a>设置dns-prefetch</h4><pre><code>开启
+&lt;meta http-equiv=&quot;X-dns-prefetch-control&quot; content=&quot;on&quot; /&gt;
 
+设置
+&lt;link rel=&quot;dns-prefetch&quot; href=&quot;//baidu.com&quot; /&gt; 使用//是为了防止不确定是http还是https协议
+</code></pre>
           
         
       
@@ -2288,183 +2560,6 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/zhengze/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sunny Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨欣舰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/21/zhengze/" itemprop="url">常用正则表达式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">创建于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-21T16:25:41+08:00">
-                2018-05-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  242
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="简单语法糖"><a href="#简单语法糖" class="headerlink" title="简单语法糖"></a>简单语法糖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&apos;^&apos;放在开头，验证是否以...开头</span><br><span class="line">&apos;$&apos;放在结尾，验证是否以...结尾</span><br><span class="line">&apos;[]&apos;验证出现过的字符</span><br><span class="line">&apos;()&apos;验证出现过的字符串</span><br><span class="line">&apos;-&apos;连接符，常用[a-z],[A-Z],[0-9],[\u4e00-\u9fa5]</span><br><span class="line">&apos;^&apos;放到中间，代表不包含</span><br></pre></td></tr></table></figure>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>const ZHENG = /^a/
-const str = &apos;aaaaooo&apos;
-console.log(ZHENG.test(str))
-</code></pre><blockquote>
-<p>控制台输出：true</p>
-</blockquote>
-<h3 id="经典验证"><a href="#经典验证" class="headerlink" title="经典验证"></a>经典验证</h3><p>1.验证数字</p>
-<pre><code>^[0-9]*$
-</code></pre><p>2.验证n位的数字(字符串内容为纯数字的也支持)</p>
-<pre><code>^\d{n}$
-</code></pre><p>3.验证至少n位的数字(字符串内容为纯数字的也支持)</p>
-<pre><code>^\d{n,}$
-</code></pre><p>4.验证m-n位的数字（字符串内容为纯数字的也支持）</p>
-<pre><code>^\d{m,n}$
-</code></pre><p>5.0和非0开头的数字</p>
-<pre><code>^(0|[1-9][0-9]*)$
-</code></pre><p>6.汉字</p>
-<pre><code>^[\u4e00-\u9fa5]{0,}$
-</code></pre><p>7.长度为m-n的所有字符</p>
-<pre><code>^.{m,n}$
-</code></pre><p>8.以字母数字下划线开头的字符串</p>
-<pre><code>^[A-Za-z0-9_]$
-</code></pre><p>9.Email地址</p>
-<pre><code>^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
-</code></pre><p>10.空格</p>
-<pre><code>/\s*/g
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2519,7 +2614,7 @@ console.log(ZHENG.test(str))
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -2584,7 +2679,7 @@ console.log(ZHENG.test(str))
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.1k</span>
+    <span title="Site words total count">12.9k</span>
   
 </div>
 
