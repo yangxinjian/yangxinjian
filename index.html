@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  333
+                  834
                 </span>
               
 
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  4
                 </span>
               
             </div>
@@ -463,7 +463,153 @@ obj.arrowFn() // // this指向obj的作用域，也就是windows
             ...
         }
     }
-</code></pre><h4 id="不能用作构造函数，不能用new生成一个对象"><a href="#不能用作构造函数，不能用new生成一个对象" class="headerlink" title="不能用作构造函数，不能用new生成一个对象"></a>不能用作构造函数，不能用new生成一个对象</h4><h4 id="没有prototype属性"><a href="#没有prototype属性" class="headerlink" title="没有prototype属性"></a>没有prototype属性</h4>
+</code></pre><h4 id="不能用作构造函数，不能用new生成一个对象"><a href="#不能用作构造函数，不能用new生成一个对象" class="headerlink" title="不能用作构造函数，不能用new生成一个对象"></a>不能用作构造函数，不能用new生成一个对象</h4><pre><code>let Animai = function () {
+}
+let animai = new Animai()
+animai =====&gt; Animai {}
+
+let Animai1 = () =&gt; {
+}
+let animai1 = new Animai1()
+animai1 =====&gt; 报错：Animai1 is not a constructor
+</code></pre><h4 id="没有prototype属性"><a href="#没有prototype属性" class="headerlink" title="没有prototype属性"></a>没有prototype属性</h4><pre><code>let commonFn = function () {}
+let arrowFn = () =&gt; {}
+
+console.log(commonFn.prototype)  =====&gt; { constructor }
+console.log(arrowFn.prototype)  =====&gt; undefined
+</code></pre><h3 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><pre><code>let str = `
+    &lt;div&gt;
+        &lt;h1 class=&quot;title&quot;&gt;123&lt;/h1&gt;
+    &lt;/div&gt;
+`
+document.querySelector(&apos;body&apos;).innerHTML = str //html页面显示模版字符串的内容
+</code></pre><h4 id="添加变量"><a href="#添加变量" class="headerlink" title="添加变量"></a>添加变量</h4><pre><code>let name = &apos;pig&apos;
+let str = `
+    &lt;div&gt;
+        &lt;h1&gt;${name}&lt;/h1&gt;
+    &lt;/div&gt;
+`
+document.querySelector(&apos;body&apos;).innerHTML = str //html页面显示pig
+</code></pre><h4 id="添加方法"><a href="#添加方法" class="headerlink" title="添加方法"></a>添加方法</h4><pre><code>let getName = () =&gt; {
+    return &apos;my pig&apos;
+}
+let str = `
+    &lt;div&gt;
+        &lt;h1&gt;${getName()}&lt;/h1&gt;
+    &lt;/div&gt;
+`
+document.querySelector(&apos;body&apos;).innerHTML = str //html页面显示my pig
+</code></pre><h4 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h4><pre><code>let arr = [&apos;pig&apos;, &apos;dog&apos;, &apos;duck&apos;]
+let str = `
+    &lt;ul&gt;
+        ${
+            arr.map(name =&gt; `&lt;li&gt;I am ${name}&lt;/li&gt;`).join(&apos;&apos;)
+        }
+    &lt;/ul&gt;
+`
+document.querySelector(&apos;body&apos;).innerHTML = str 
+//html页面显示三个li，分别输出语句 I am pig / I am dog / I am duck
+</code></pre><h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><h4 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h4><pre><code>new Promise((resolve, reject) =&gt; {
+    // 异步函数
+    if (4 == 2) {
+        resolve()
+    } else {
+        reject()
+    }
+}).then((res) =&gt; {
+    // resolve
+    console.log(&apos;success&apos;, res)
+}, (err) =&gt; {
+    // reject
+    console.log(&apos;fail&apos;, err)
+})
+
+控制台输出：fail undefined
+</code></pre><h4 id="两个请求，一个请求成功后触发第二个请求，第二个请求成功后输出值"><a href="#两个请求，一个请求成功后触发第二个请求，第二个请求成功后输出值" class="headerlink" title="两个请求，一个请求成功后触发第二个请求，第二个请求成功后输出值"></a>两个请求，一个请求成功后触发第二个请求，第二个请求成功后输出值</h4><pre><code>var promise1 = new Promise((resolve, reject) =&gt; {
+    if (6 &gt; 2) {
+        resolve()
+    } else {
+        reject()
+    }
+})
+
+var promise2 = new Promise((resolve, reject) =&gt; {
+    if (3 &gt; 2) {
+        resolve()
+    } else {
+        reject()
+    }
+})
+
+promise1.then(() =&gt; {
+    return promise2
+}).then(() =&gt; {
+    console.log(&apos;promise2 success&apos;)
+})
+
+控制台输出：promise2 success
+</code></pre><h3 id="面向对象-类"><a href="#面向对象-类" class="headerlink" title="面向对象-类"></a>面向对象-类</h3><h4 id="基础用法-1"><a href="#基础用法-1" class="headerlink" title="基础用法"></a>基础用法</h4><pre><code>class Animal {
+    constructor (name) {
+        this.name = &apos;animal&apos;
+        this.myname = name
+    }
+    getName () {
+        return this.name + &apos;,&apos; + this.myname
+    }
+}
+
+let animal = new Animal(&apos;pig&apos;) // 实例化Animal的类
+console.log(animal.getName()) // 控制台输出：animal，pig
+</code></pre><h4 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h4><pre><code>class Animal {
+    constructor () {
+        this.name = &apos;animal&apos;
+    }
+    getName () {
+        return this.name
+    }
+}
+class Cat extends Animal{
+    constructor () {
+        super() // 如果不加这行代码，会报错Must call super constructor in derived class             before accessing &apos;this&apos; or returning from derived 
+        this.name = &apos;cat&apos;
+    }
+}
+
+let animal = new Animal()
+let cat = new Cat()
+console.log(animal.getName())  =====&gt; animal
+console.log(cat.getName())  =====&gt; cat
+</code></pre><h4 id="对象的写法"><a href="#对象的写法" class="headerlink" title="对象的写法"></a>对象的写法</h4><pre><code>原本es5的写法
+var name = &apos;pig&apos;,
+    age  = 18
+var obj = {
+    name: name,
+    age: age,
+    getName: function () {
+        return this.name
+    },
+    getAge: function () {
+        return this.age
+    }
+}
+console.log(obj.getName())  =====&gt; pig
+
+现在es6的写法
+let name = &apos;pig&apos;,
+    age  = 18
+let obj = {
+    name, //变量名可以直接用作对象的属性名称
+    age,
+    getName () { //方法可以简写
+        return this.name
+    },
+    [&apos;get&apos; + &apos;Age&apos;] () { //表达式作为属性名或者方法名
+        return this.age
+    }
+}
+console.log(obj.getName())   =====&gt; pig
+console.log(obj.getAge())   =====&gt; 18
+</code></pre>
           
         
       
@@ -2679,7 +2825,7 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">12.9k</span>
+    <span title="Site words total count">13.4k</span>
   
 </div>
 
