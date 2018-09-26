@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="杨欣舰的博客">
 <meta property="og:description" content="变量与常量let 定义变量, const 定义常量，常量定义一次后，不可更改let r = 2 r = 4 console.log(r)   r =====&amp;gt; 4  const pi = 3.14 pi = 3.2 console.log(pi)  报错Assignment to constant variable. 不可重复定义var foo = 1 var foo = 2 console">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-20T11:23:36.466Z">
+<meta property="og:updated_time" content="2018-09-21T08:29:40.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6小记">
 <meta name="twitter:description" content="变量与常量let 定义变量, const 定义常量，常量定义一次后，不可更改let r = 2 r = 4 console.log(r)   r =====&amp;gt; 4  const pi = 3.14 pi = 3.2 console.log(pi)  报错Assignment to constant variable. 不可重复定义var foo = 1 var foo = 2 console">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  834
+                  991
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  5
                 </span>
               
             </div>
@@ -605,6 +605,34 @@ let obj = {
 }
 console.log(obj.getName())   =====&gt; pig
 console.log(obj.getAge())   =====&gt; 18
+</code></pre><ul>
+<li><p>Object.keys // 获取对象的所有属性名，放回的是一个数组</p>
+<p>Object.keys(obj)  =====&gt; [‘name’, ‘age’, ‘getName’, ‘getAge’]</p>
+</li>
+<li><p>Object.assign // 对象的整合</p>
+<p>Object.assign({a: 1, b: 2}, {a: 3, b: 3, c: 5}) =====&gt; {a: 3, b: 3, c: 5}</p>
+</li>
+</ul>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><h4 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h4><pre><code>export： 导出模块的内容
+let str = &apos;string&apos;
+let obj = {
+    name: &apos;pig&apos;
+}
+export {
+    str,
+    obj
+}
+
+import： 在其他js文件获取模块的内容
+import {str, obj, fn} from &apos;./module.js&apos;
+console.log(&apos;name&apos;, obj.name)   =====&gt; &apos;pig&apos;
+console.log(&apos;str&apos;, str)         =====&gt; &apos;string&apos;
+</code></pre><h4 id="默认输出-引用"><a href="#默认输出-引用" class="headerlink" title="默认输出/引用"></a>默认输出/引用</h4><pre><code>输出默认值：
+export default {a: 1}
+
+引用默认值：（引用时可以使用任意名称接受传递过来的值）
+import foo from &apos;./module.js&apos;
+console.log(&apos;foo&apos;, foo)
 </code></pre>
       
     </div>
@@ -629,8 +657,8 @@ console.log(obj.getAge())   =====&gt; 18
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/30/knowledge/" rel="next" title="前端必会知识点">
-                <i class="fa fa-chevron-left"></i> 前端必会知识点
+              <a href="/2018/08/30/knowledge/" rel="next" title="前端必会知识点（持续性更新）">
+                <i class="fa fa-chevron-left"></i> 前端必会知识点（持续性更新）
               </a>
             
           </div>
@@ -638,6 +666,10 @@ console.log(obj.getAge())   =====&gt; 18
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/26/yarn/" rel="prev" title="yarn(包管理工具，代替npm)">
+                yarn(包管理工具，代替npm) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -718,7 +750,7 @@ console.log(obj.getAge())   =====&gt; 18
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -765,7 +797,7 @@ console.log(obj.getAge())   =====&gt; 18
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量与常量"><span class="nav-number">1.</span> <span class="nav-text">变量与常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#let-定义变量-const-定义常量，常量定义一次后，不可更改"><span class="nav-number">1.1.</span> <span class="nav-text">let 定义变量, const 定义常量，常量定义一次后，不可更改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不可重复定义"><span class="nav-number">1.2.</span> <span class="nav-text">不可重复定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级定义域"><span class="nav-number">1.3.</span> <span class="nav-text">块级定义域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不存在变量提升"><span class="nav-number">1.4.</span> <span class="nav-text">不存在变量提升</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">2.</span> <span class="nav-text">箭头函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数-gt-表达式-语句"><span class="nav-number">2.1.</span> <span class="nav-text">参数 =&gt; 表达式/语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承外层作用域，没有自己的this指针，没有独立作用域"><span class="nav-number">2.2.</span> <span class="nav-text">继承外层作用域，没有自己的this指针，没有独立作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不能用作构造函数，不能用new生成一个对象"><span class="nav-number">2.3.</span> <span class="nav-text">不能用作构造函数，不能用new生成一个对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#没有prototype属性"><span class="nav-number">2.4.</span> <span class="nav-text">没有prototype属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模版字符串"><span class="nav-number">3.</span> <span class="nav-text">模版字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法"><span class="nav-number">3.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加变量"><span class="nav-number">3.2.</span> <span class="nav-text">添加变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加方法"><span class="nav-number">3.3.</span> <span class="nav-text">添加方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环遍历"><span class="nav-number">3.4.</span> <span class="nav-text">循环遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#promise"><span class="nav-number">4.</span> <span class="nav-text">promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础用法"><span class="nav-number">4.1.</span> <span class="nav-text">基础用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个请求，一个请求成功后触发第二个请求，第二个请求成功后输出值"><span class="nav-number">4.2.</span> <span class="nav-text">两个请求，一个请求成功后触发第二个请求，第二个请求成功后输出值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象-类"><span class="nav-number">5.</span> <span class="nav-text">面向对象-类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础用法-1"><span class="nav-number">5.1.</span> <span class="nav-text">基础用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类的继承"><span class="nav-number">5.2.</span> <span class="nav-text">类的继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的写法"><span class="nav-number">5.3.</span> <span class="nav-text">对象的写法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量与常量"><span class="nav-number">1.</span> <span class="nav-text">变量与常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#let-定义变量-const-定义常量，常量定义一次后，不可更改"><span class="nav-number">1.1.</span> <span class="nav-text">let 定义变量, const 定义常量，常量定义一次后，不可更改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不可重复定义"><span class="nav-number">1.2.</span> <span class="nav-text">不可重复定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级定义域"><span class="nav-number">1.3.</span> <span class="nav-text">块级定义域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不存在变量提升"><span class="nav-number">1.4.</span> <span class="nav-text">不存在变量提升</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">2.</span> <span class="nav-text">箭头函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数-gt-表达式-语句"><span class="nav-number">2.1.</span> <span class="nav-text">参数 =&gt; 表达式/语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承外层作用域，没有自己的this指针，没有独立作用域"><span class="nav-number">2.2.</span> <span class="nav-text">继承外层作用域，没有自己的this指针，没有独立作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不能用作构造函数，不能用new生成一个对象"><span class="nav-number">2.3.</span> <span class="nav-text">不能用作构造函数，不能用new生成一个对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#没有prototype属性"><span class="nav-number">2.4.</span> <span class="nav-text">没有prototype属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模版字符串"><span class="nav-number">3.</span> <span class="nav-text">模版字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法"><span class="nav-number">3.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加变量"><span class="nav-number">3.2.</span> <span class="nav-text">添加变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加方法"><span class="nav-number">3.3.</span> <span class="nav-text">添加方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环遍历"><span class="nav-number">3.4.</span> <span class="nav-text">循环遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#promise"><span class="nav-number">4.</span> <span class="nav-text">promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础用法"><span class="nav-number">4.1.</span> <span class="nav-text">基础用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个请求，一个请求成功后触发第二个请求，第二个请求成功后输出值"><span class="nav-number">4.2.</span> <span class="nav-text">两个请求，一个请求成功后触发第二个请求，第二个请求成功后输出值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象-类"><span class="nav-number">5.</span> <span class="nav-text">面向对象-类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础用法-1"><span class="nav-number">5.1.</span> <span class="nav-text">基础用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类的继承"><span class="nav-number">5.2.</span> <span class="nav-text">类的继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的写法"><span class="nav-number">5.3.</span> <span class="nav-text">对象的写法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块化"><span class="nav-number">6.</span> <span class="nav-text">模块化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法-1"><span class="nav-number">6.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认输出-引用"><span class="nav-number">6.2.</span> <span class="nav-text">默认输出/引用</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -799,7 +831,7 @@ console.log(obj.getAge())   =====&gt; 18
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.4k</span>
+    <span title="Site words total count">14.1k</span>
   
 </div>
 

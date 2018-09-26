@@ -286,6 +286,517 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/webpack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/26/webpack/" itemprop="url">webpack</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-26T11:08:20+08:00">
+                2018-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  253
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一个前端资源加载/打包工具</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>yarn add webpack --dev
+npm install webpack --save-dev
+</code></pre><h3 id="处理文件"><a href="#处理文件" class="headerlink" title="处理文件"></a>处理文件</h3><pre><code>html ==&gt; html-webpack-plugin, html单独打包成文件
+脚本  ==&gt; babel + babel-preset-react(es6)
+样式  ==&gt; css-loader + sass/less-loader
+图片/字体  ==&gt; url-loader + file-loader
+
+extract-text-webpack-plugin 样式打包成单独文件
+CommonsChunkPlugin 提出通用模块
+webpack-dev-server 为webpack项目提供web服务 + 更改代码自动刷新 + 路径转发
+</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="创建一个配置文件webpack-config-js"><a href="#创建一个配置文件webpack-config-js" class="headerlink" title="创建一个配置文件webpack.config.js"></a>创建一个配置文件webpack.config.js</h4><h4 id="创建入口文件夹"><a href="#创建入口文件夹" class="headerlink" title="创建入口文件夹"></a>创建入口文件夹</h4><pre><code>src
+    app.js
+</code></pre><h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><pre><code>const path = require(&apos;path&apos;)
+module.exports = {
+    entry: &apos;./src/app.js&apos;,
+    output: {
+        path: path.resolve(__dirname, &apos;dist&apos;), // 生成打包目录
+        filename: &apos;app.js&apos;
+    }
+}
+</code></pre><h4 id="配置html"><a href="#配置html" class="headerlink" title="配置html"></a>配置html</h4><pre><code>安卓html-webpack-plugin
+yarn add html-webpack-plugin --dev
+
+在刚才的config里面引入
+const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;)
+
+在output下面加入
+plugins: [
+    new HtmlWebpackPlugin({
+        // 这里存放配置项（其他配置可按照需求去官网搜索）
+        template: &apos;./src/index.html&apos;
+        // 给打包生成的html设置一个模版，也可以不设置，则自动生成html，会自动引入出口的js文件
+    })
+]
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/26/react/" itemprop="url">react 第一次实战项目知识点记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-26T10:54:39+08:00">
+                2018-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  195
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><h4 id="安装node-js（官网下载即可）"><a href="#安装node-js（官网下载即可）" class="headerlink" title="安装node.js（官网下载即可）"></a>安装node.js（官网下载即可）</h4><pre><code>node -v (查看是否安装node完成)
+</code></pre><h4 id="安装yarn"><a href="#安装yarn" class="headerlink" title="安装yarn"></a>安装yarn</h4><pre><code>sudo cnpm install yarn -g
+yarn -v（查看是否安装yarn完成）
+</code></pre><h4 id="使用git在马云上进行托管，并在本地clone下来项目"><a href="#使用git在马云上进行托管，并在本地clone下来项目" class="headerlink" title="使用git在马云上进行托管，并在本地clone下来项目"></a>使用git在马云上进行托管，并在本地clone下来项目</h4><pre><code>git clone 你项目的地址
+cd 你的项目
+</code></pre><h4 id="配置gitignore（git命令忽视）"><a href="#配置gitignore（git命令忽视）" class="headerlink" title="配置gitignore（git命令忽视）"></a>配置gitignore（git命令忽视）</h4><pre><code>vim .gitignore
+i(编辑命令)
+.DS_Store (mac自带)
+node_modules (node包)
+dist (打包的压缩文件)
+*.log（错误信息等）
+</code></pre><h4 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h4><pre><code>yarn init
+</code></pre><h4 id="提交项目"><a href="#提交项目" class="headerlink" title="提交项目"></a>提交项目</h4><pre><code>git add . （保存到暂存区）
+git commit -m &apos;备注信息&apos; （把暂存区内容保存到分支）
+git pull (拉取其他分支代码)
+git push (将更新内容提交进入远程分支)
+</code></pre><h4 id="安装webpack打包工具-配置规则查看webpack章节"><a href="#安装webpack打包工具-配置规则查看webpack章节" class="headerlink" title="安装webpack打包工具(配置规则查看webpack章节)"></a>安装webpack打包工具(配置规则查看webpack章节)</h4><pre><code>yarn add webpack --dev
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/yarn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunny Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨欣舰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/26/yarn/" itemprop="url">yarn(包管理工具，代替npm)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-26T10:39:13+08:00">
+                2018-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  71
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>安装速度快，缓存机制强，本次安装一个包，缓存到本地，无需再次网络请求</p>
+<h3 id="与npm对比"><a href="#与npm对比" class="headerlink" title="与npm对比"></a>与npm对比</h3><pre><code>yarn                npm
+yarn init           npm init
+yarn                npm install
+yarn global add ... npm install ... -g   
+yarn add ...        npm install ... -save
+yarn add ... --dev  npm install ... --save-dev
+yarn remove ...     npm uninstall ... --save(/dev)  
+yarn run ...        npm run ...
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/es6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -349,7 +860,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  834
+                  991
                 </span>
               
 
@@ -365,7 +876,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  5
                 </span>
               
             </div>
@@ -609,6 +1120,34 @@ let obj = {
 }
 console.log(obj.getName())   =====&gt; pig
 console.log(obj.getAge())   =====&gt; 18
+</code></pre><ul>
+<li><p>Object.keys // 获取对象的所有属性名，放回的是一个数组</p>
+<p>Object.keys(obj)  =====&gt; [‘name’, ‘age’, ‘getName’, ‘getAge’]</p>
+</li>
+<li><p>Object.assign // 对象的整合</p>
+<p>Object.assign({a: 1, b: 2}, {a: 3, b: 3, c: 5}) =====&gt; {a: 3, b: 3, c: 5}</p>
+</li>
+</ul>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><h4 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h4><pre><code>export： 导出模块的内容
+let str = &apos;string&apos;
+let obj = {
+    name: &apos;pig&apos;
+}
+export {
+    str,
+    obj
+}
+
+import： 在其他js文件获取模块的内容
+import {str, obj, fn} from &apos;./module.js&apos;
+console.log(&apos;name&apos;, obj.name)   =====&gt; &apos;pig&apos;
+console.log(&apos;str&apos;, str)         =====&gt; &apos;string&apos;
+</code></pre><h4 id="默认输出-引用"><a href="#默认输出-引用" class="headerlink" title="默认输出/引用"></a>默认输出/引用</h4><pre><code>输出默认值：
+export default {a: 1}
+
+引用默认值：（引用时可以使用任意名称接受传递过来的值）
+import foo from &apos;./module.js&apos;
+console.log(&apos;foo&apos;, foo)
 </code></pre>
           
         
@@ -676,7 +1215,7 @@ console.log(obj.getAge())   =====&gt; 18
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/30/knowledge/" itemprop="url">前端必会知识点</a></h1>
+                <a class="post-title-link" href="/2018/08/30/knowledge/" itemprop="url">前端必会知识点（持续性更新）</a></h1>
         
 
         <div class="post-meta">
@@ -806,7 +1345,7 @@ console.log(obj.getAge())   =====&gt; 18
 <p>文件合并</p>
 </blockquote>
 <pre><code>第一种：将所有的js合并成一个大文件，所有的页面都引用。
-优点：合并简单，使用也简单；缺点：页面可能回家再到本页面不使用的代码
+优点：合并简单，使用也简单；缺点：页面可能会加载到本页面不使用的代码
 
 第二种：各个页面合并生成自己所需js文件，生成多份js合并。
 优点：每个页面都用到最精确的js，不会有不相关代码；缺点：公共部分无法使用缓存优化加载，会存在大量共同js代码的冗余。
@@ -2160,552 +2699,6 @@ Pragma: no-cache
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sunny Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨欣舰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/21/vue/" itemprop="url">Vue小记知识点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">创建于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-21T11:09:38+08:00">
-                2018-06-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  361
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-this-router-go-0-重新刷新加载页面"><a href="#1-this-router-go-0-重新刷新加载页面" class="headerlink" title="1. this.$router.go(0) 重新刷新加载页面"></a>1. this.$router.go(0) 重新刷新加载页面</h4><h4 id="2-使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天"><a href="#2-使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天" class="headerlink" title="2. 使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天"></a>2. 使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天</h4><blockquote>
-<p>解决办法，设置value-format！！！！，文档上写的是value属性，当时小坑了一下</p>
-</blockquote>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:value-format=&quot;yyyy-MM&quot;</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="3-axios下关于put-get-delete-post请求的三种传参方式"><a href="#3-axios下关于put-get-delete-post请求的三种传参方式" class="headerlink" title="3. axios下关于put/get/delete/post请求的三种传参方式"></a>3. axios下关于put/get/delete/post请求的三种传参方式</h4><h5 id="（1）get-put-delete-post关于path传参方式"><a href="#（1）get-put-delete-post关于path传参方式" class="headerlink" title="（1）get/put/delete/post关于path传参方式"></a>（1）get/put/delete/post关于path传参方式</h5><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.$axios.get(&quot;/hospital/ruleDicts/&quot; + 参数)</span><br><span class="line">    .then(() =&gt; &#123;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((err) =&gt; &#123;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-</code></pre><h5 id="（2）get-put-delete-post关于body传参方式"><a href="#（2）get-put-delete-post关于body传参方式" class="headerlink" title="（2）get/put/delete/post关于body传参方式"></a>（2）get/put/delete/post关于body传参方式</h5><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">that.$axios.put(&quot;/hospital/updateRule/&quot;, &#123;</span><br><span class="line">        字段1: 参数值，</span><br><span class="line">        字段2: 参数值</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(() =&gt; &#123;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((err) =&gt; &#123;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-</code></pre><h5 id="（3）get-put-delete-post关于query传参方式"><a href="#（3）get-put-delete-post关于query传参方式" class="headerlink" title="（3）get/put/delete/post关于query传参方式"></a>（3）get/put/delete/post关于query传参方式</h5><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">that.$axios.put(&quot;/hospital/updatePackageName/&quot;?参数字段=&quot;+参数值)</span><br><span class="line">    .then((res)=&gt;&#123;</span><br><span class="line">    &#125;,(err)=&gt;&#123;</span><br><span class="line">    &#125;).catch((error)=&gt;&#123;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="4-bus-js实现兄弟之间组件通信（官方文档中只提供了父与子通信）"><a href="#4-bus-js实现兄弟之间组件通信（官方文档中只提供了父与子通信）" class="headerlink" title="4. bus.js实现兄弟之间组件通信（官方文档中只提供了父与子通信）"></a>4. bus.js实现兄弟之间组件通信（官方文档中只提供了父与子通信）</h4><blockquote>
-<p>在文件夹中新建一个文件，随意取名，例如bus.js放在了assets文件夹（文件夹自定义）下，在bus.js文件夹下写入：</p>
-</blockquote>
-<pre><code>import Vue from &apos;vue&apos;
-export default new Vue()
-</code></pre><blockquote>
-<p>在两个要通信的兄弟组件之间引入bus.js</p>
-</blockquote>
-<pre><code>import bus from &apos;你bus.js文件存放的位置&apos;
-</code></pre><blockquote>
-<p>想要传递信息的兄弟1</p>
-</blockquote>
-<pre><code>&lt;button @click=&quot;toBus&quot;&gt;&lt;/button&gt;
-
-methods: {
-    toBus () {
-        bus.$emit(&apos;on&apos;, &apos;这个是兄弟1传给兄弟2的值&apos;)
-    }
-}
-</code></pre><blockquote>
-<p>接受传递信息的兄弟2</p>
-</blockquote>
-<pre><code>mounted () {
-    bus.$on(&apos;on&apos;, (msg) =&gt; {
-        console.log(msg) // msg就是从兄弟1接到的数据
-    })
-}
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/js/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sunny Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨欣舰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/21/js/" itemprop="url">JavaScript 知识点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">创建于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-21T10:46:57+08:00">
-                2018-06-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  548
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="概念知识点"><a href="#概念知识点" class="headerlink" title="概念知识点"></a>概念知识点</h2><h4 id="1-JavaScript-实现由-核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM-构成。"><a href="#1-JavaScript-实现由-核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM-构成。" class="headerlink" title="1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。"></a>1. JavaScript 实现由 (核心：ECMAScript；文档对象模型：DOM；浏览器对象模型：BOM) 构成。</h4><h4 id="2-浏览器窗口功能以及navigator对象-location对象-screen对象，对cookie-XMLHttpRequest-ActiveXObject的支持均属于BOM"><a href="#2-浏览器窗口功能以及navigator对象-location对象-screen对象，对cookie-XMLHttpRequest-ActiveXObject的支持均属于BOM" class="headerlink" title="2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOM"></a>2. 浏览器窗口功能以及navigator对象/location对象/screen对象，对cookie/XMLHttpRequest/ActiveXObject的支持均属于BOM</h4><pre><code>navigator对象包含有关浏览器的信息，例如：版本appVersion, 名称appName, 操作系统平台platform等
-
-location对象包含有关当前URL的信息，常用：window.location.href获取当前地址或者改变新的地址/window.location.reload()重新加载当前页面
-
-screen对象包含有关客户端显示屏幕的信息，例如：window.screen.height返回屏幕的总高度
-</code></pre><h4 id="3-NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN"><a href="#3-NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN" class="headerlink" title="3.NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN"></a>3.NaN与任何值都不相等，并且涉及到NaN操作时，均为NaN</h4><h4 id="4-–"><a href="#4-–" class="headerlink" title="4.++/–"></a>4.++/–</h4><blockquote>
-<p>–,++前置时，先运算再赋值</p>
-</blockquote>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = 10</span><br><span class="line">var num2 = 20</span><br><span class="line">var num3 = --num1 + num2 =&gt; num3 = 29</span><br><span class="line">var num4 = num1 + num2 =&gt; num4 = 29</span><br></pre></td></tr></table></figure>
-</code></pre><blockquote>
-<p>–,++后置时，先赋值再运算</p>
-</blockquote>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = 10</span><br><span class="line">var num2 = 20</span><br><span class="line">var num3 = num1-- + num2 =&gt; num3 = 30</span><br><span class="line">var num4 = num1 + num2 =&gt; num4 = 29</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="5-函数中return后面的语句不会被执行"><a href="#5-函数中return后面的语句不会被执行" class="headerlink" title="5.函数中return后面的语句不会被执行"></a>5.函数中return后面的语句不会被执行</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function test () &#123;</span><br><span class="line">	return;</span><br><span class="line">	alert(1)//alert提示框永远不会弹出</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="6-深浅克隆-原生js，也可参考jquery文档下的克隆"><a href="#6-深浅克隆-原生js，也可参考jquery文档下的克隆" class="headerlink" title="6.深浅克隆(原生js，也可参考jquery文档下的克隆)"></a>6.深浅克隆(原生js，也可参考jquery文档下的克隆)</h4><blockquote>
-<p>浅克隆（简单的复制对象，如果对象其中一个属性是引用型变量，就会出现负值增生的情况，因为引用型变量保存的是内存地址，所以其实后来操作的都是同一块内存，导致了数组内容都一样。）</p>
-</blockquote>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var objTemplate = &#123;</span><br><span class="line">	name: &apos;pig&apos;,</span><br><span class="line">	username: &apos;杨欣舰&apos;,</span><br><span class="line">	tag: [&apos;淑女&apos;]</span><br><span class="line">&#125;//obj 为初始值对象</span><br><span class="line">function simpleCopy (obj) &#123;</span><br><span class="line">	var newobj = &#123;&#125;</span><br><span class="line">	for (var i in obj) &#123;</span><br><span class="line">		newobj[i] = obj[i]</span><br><span class="line">	&#125;</span><br><span class="line">	return newobj</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var userboy = simpleCopy(objTemplate)</span><br><span class="line">userboy.name = &apos;小龙龙&apos;</span><br><span class="line">userboy.username = &apos;龙宝&apos;</span><br><span class="line">userboy.tag.push(&apos;亲爱的&apos;)</span><br></pre></td></tr></table></figure>
-</code></pre><blockquote>
-<p>深度克隆（深克隆就是在克隆的时候判断一下属性的类型是不是引用型变量，如果是的话就用递归方法让它一层一层进去复制自己。）</p>
-</blockquote>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function deepCopy (obj, newobj) &#123;</span><br><span class="line">	var newobj = newobj || &#123;&#125;</span><br><span class="line">	for (var i in obj) &#123;</span><br><span class="line">		if (typeof obj[i] == &apos;Object&apos;) &#123;</span><br><span class="line">			newobj[i] = (obj[i].construtor === Array) ? [] : &#123;&#125;</span><br><span class="line">			deepCopy(obj[i], newobj[i])</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			newobj[i] = obj[i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return newobj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sunny Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oqk0uz684.bkt.clouddn.com/WeChat%20Image_20180516113012.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨欣舰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/14/css/" itemprop="url">css小技巧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">创建于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-14T11:14:18+08:00">
-                2018-06-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  505
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-元素居中"><a href="#1-元素居中" class="headerlink" title="1.元素居中"></a>1.元素居中</h3><h4 id="1-块状元素居中"><a href="#1-块状元素居中" class="headerlink" title="(1) 块状元素居中"></a>(1) 块状元素居中</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	margin: o auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="2-浮动元素居中（不提倡）"><a href="#2-浮动元素居中（不提倡）" class="headerlink" title="(2) 浮动元素居中（不提倡）"></a>(2) 浮动元素居中（不提倡）</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	margin-left: -50px;</span><br><span class="line">	margin-top: -50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="3-flex元素居中（超级实用）"><a href="#3-flex元素居中（超级实用）" class="headerlink" title="(3) flex元素居中（超级实用）"></a>(3) flex元素居中（超级实用）</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">	display: flex;</span><br><span class="line">	justify-content: center; 一行下的水平居中</span><br><span class="line">	align-items: center; 多行的竖直居中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="2-伪类"><a href="#2-伪类" class="headerlink" title="2.伪类"></a>2.伪类</h3><p>####（1）相同class的index检索</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:last-child    检索最后一个值</span><br><span class="line">:first-child	检索第一个值</span><br><span class="line">:nth-child(index)	从头开始检索index个值，index初始值为1</span><br><span class="line">:nth-last-child(index)	从尾开始检索index个值，index为1默认倒数第一个（这个比较坑）</span><br><span class="line">:nth-child(odd)		检索基数</span><br><span class="line">:nth-child(even)	检索偶数</span><br></pre></td></tr></table></figure>
-</code></pre><blockquote>
-<p>找出倒数第几个的样式，这个伪类还是很帅气的，之前写一个项目，li下面又放了一个标签，怎么调节li最后一个都不变，但是因为li有同级最后，那就不是最后一个元素，后来使用nth-last-child(2)就弄好了</p>
-</blockquote>
-<p>####（2）::before写出小三角</p>
-<pre><code> .box{
-     position: relative;
-     left:100px;
-     width: 140px;
-     min-height: 70px;
-     background: #f6dbd8;
-     -moz-border-radius: 12px;
-     -webkit-border-radius: 12px;
-     border-radius: 12px;
-     padding: 5px 10px;
-     word-wrap: break-word;
-}
-.box:before{ 三角形区域
-     position: absolute;
-     content: &quot;&quot;;
-     width: 0;
-     height: 0;
-     right: 100%;
-     top: 38px;
-     border-top: 13px solid transparent;
-     border-right: 26px solid #f6dbd8;
-     border-bottom: 13px solid transparent;
- }
-</code></pre><h3 id="3-去除input标签默认点击边框"><a href="#3-去除input标签默认点击边框" class="headerlink" title="3.去除input标签默认点击边框"></a>3.去除input标签默认点击边框</h3><pre><code>outline: none;
-</code></pre><h3 id="4-编写一个小三角"><a href="#4-编写一个小三角" class="headerlink" title="4.编写一个小三角"></a>4.编写一个小三角</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.demo&#123;</span><br><span class="line">	width: 0;</span><br><span class="line">	height: 0;</span><br><span class="line">	border-width: 20px;</span><br><span class="line">	border-style: solid;</span><br><span class="line">	border-color: transparent tansparent red transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="5-box-sizing"><a href="#5-box-sizing" class="headerlink" title="5.box-sizing"></a>5.box-sizing</h3><blockquote>
-<p>box-sizing: content-box; //默认的标准盒模型元素效果（w3c）<br>box-sizing: border-box; //默认的怪异盒模型元素效果（ie）<br>box-sizing: inherit; //继承父元素box-sizing的属性值</p>
-</blockquote>
-<h3 id="6-移动端适配css插件-–-cssrem（vscode下安装步骤）"><a href="#6-移动端适配css插件-–-cssrem（vscode下安装步骤）" class="headerlink" title="6.移动端适配css插件 – cssrem（vscode下安装步骤）"></a>6.移动端适配css插件 – cssrem（vscode下安装步骤）</h3><pre><code>1. 在vscode的扩展商店，搜索cssrem
-2. 点击安装，安装后，点击重新加载
-3. 加载完成后，打开设置，在右边配置输入中，可以设置转换长度，&quot;cssrem-rootFontSize&quot;
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2760,7 +2753,7 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -2825,7 +2818,7 @@ screen对象包含有关客户端显示屏幕的信息，例如：window.screen.
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.4k</span>
+    <span title="Site words total count">14.1k</span>
   
 </div>
 
