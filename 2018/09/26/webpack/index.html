@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="杨欣舰的博客">
 <meta property="og:description" content="一个前端资源加载/打包工具 安装yarn add webpack --dev npm install webpack --save-dev 处理文件html ==&amp;gt; html-webpack-plugin, html单独打包成文件 脚本  ==&amp;gt; babel + babel-preset-react(es6) 样式  ==&amp;gt; css-loader + sass/less-load">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-26T10:28:40.553Z">
+<meta property="og:updated_time" content="2018-09-27T10:35:23.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack">
 <meta name="twitter:description" content="一个前端资源加载/打包工具 安装yarn add webpack --dev npm install webpack --save-dev 处理文件html ==&amp;gt; html-webpack-plugin, html单独打包成文件 脚本  ==&amp;gt; babel + babel-preset-react(es6) 样式  ==&amp;gt; css-loader + sass/less-load">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  253
+                  305
                 </span>
               
 
@@ -419,6 +419,24 @@ plugins: [
         // 给打包生成的html设置一个模版，也可以不设置，则自动生成html，会自动引入出口的js文件
     })
 ]
+</code></pre><h4 id="配置es6脚本"><a href="#配置es6脚本" class="headerlink" title="配置es6脚本"></a>配置es6脚本</h4><pre><code>安装babel-core / babel-preset-env / babel-loader
+yarn add babel-core babel-preset-env babel-loader --dev
+
+在output下加一个module对象
+module: {
+    rules: [
+        {
+            test: /\.js$/,
+            exclude: /(node_modules)/, //排除（）内的文件夹
+            use: {
+                loader: &apos;babel-loader&apos;,
+                options: {
+                    presets: [&apos;env&apos;]
+                }
+            }
+        }
+    ]
+}
 </code></pre>
       
     </div>
@@ -579,7 +597,7 @@ plugins: [
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理文件"><span class="nav-number">2.</span> <span class="nav-text">处理文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个配置文件webpack-config-js"><span class="nav-number">3.1.</span> <span class="nav-text">创建一个配置文件webpack.config.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建入口文件夹"><span class="nav-number">3.2.</span> <span class="nav-text">创建入口文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出"><span class="nav-number">3.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置html"><span class="nav-number">3.4.</span> <span class="nav-text">配置html</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理文件"><span class="nav-number">2.</span> <span class="nav-text">处理文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个配置文件webpack-config-js"><span class="nav-number">3.1.</span> <span class="nav-text">创建一个配置文件webpack.config.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建入口文件夹"><span class="nav-number">3.2.</span> <span class="nav-text">创建入口文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出"><span class="nav-number">3.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置html"><span class="nav-number">3.4.</span> <span class="nav-text">配置html</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置es6脚本"><span class="nav-number">3.5.</span> <span class="nav-text">配置es6脚本</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -613,7 +631,7 @@ plugins: [
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">14.1k</span>
+    <span title="Site words total count">14.2k</span>
   
 </div>
 

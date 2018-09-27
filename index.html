@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  253
+                  305
                 </span>
               
 
@@ -423,6 +423,24 @@ plugins: [
         // 给打包生成的html设置一个模版，也可以不设置，则自动生成html，会自动引入出口的js文件
     })
 ]
+</code></pre><h4 id="配置es6脚本"><a href="#配置es6脚本" class="headerlink" title="配置es6脚本"></a>配置es6脚本</h4><pre><code>安装babel-core / babel-preset-env / babel-loader
+yarn add babel-core babel-preset-env babel-loader --dev
+
+在output下加一个module对象
+module: {
+    rules: [
+        {
+            test: /\.js$/,
+            exclude: /(node_modules)/, //排除（）内的文件夹
+            use: {
+                loader: &apos;babel-loader&apos;,
+                options: {
+                    presets: [&apos;env&apos;]
+                }
+            }
+        }
+    ]
+}
 </code></pre>
           
         
@@ -534,7 +552,7 @@ plugins: [
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  195
+                  225
                 </span>
               
 
@@ -590,6 +608,11 @@ git commit -m &apos;备注信息&apos; （把暂存区内容保存到分支）
 git pull (拉取其他分支代码)
 git push (将更新内容提交进入远程分支)
 </code></pre><h4 id="安装webpack打包工具-配置规则查看webpack章节"><a href="#安装webpack打包工具-配置规则查看webpack章节" class="headerlink" title="安装webpack打包工具(配置规则查看webpack章节)"></a>安装webpack打包工具(配置规则查看webpack章节)</h4><pre><code>yarn add webpack --dev
+
+安装react的插件
+yarn add babel-preset-react
+
+在module的rule下的/\.js$/下的use下的options下的presets数组种填入[&apos;react&apos;]
 </code></pre>
           
         
@@ -2818,7 +2841,7 @@ Pragma: no-cache
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">14.1k</span>
+    <span title="Site words total count">14.2k</span>
   
 </div>
 
