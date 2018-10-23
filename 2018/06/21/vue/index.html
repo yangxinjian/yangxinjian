@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="杨欣舰的博客">
 <meta property="og:description" content="1. this.$router.go(0) 重新刷新加载页面2. 使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天 解决办法，设置value-format！！！！，文档上写的是value属性，当时小坑了一下  1:value-format=&amp;quot;yyyy-MM&amp;quot; 3. axios下关于put/get/delete/">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-17T10:25:15.349Z">
+<meta property="og:updated_time" content="2018-10-23T03:51:17.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue小记知识点">
 <meta name="twitter:description" content="1. this.$router.go(0) 重新刷新加载页面2. 使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天 解决办法，设置value-format！！！！，文档上写的是value属性，当时小坑了一下  1:value-format=&amp;quot;yyyy-MM&amp;quot; 3. axios下关于put/get/delete/">
@@ -360,7 +360,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  361
+                  524
                 </span>
               
 
@@ -430,6 +430,25 @@ methods: {
     bus.$on(&apos;on&apos;, (msg) =&gt; {
         console.log(msg) // msg就是从兄弟1接到的数据
     })
+}
+</code></pre><h4 id="5-keep-alive用法"><a href="#5-keep-alive用法" class="headerlink" title="5.keep-alive用法"></a>5.keep-alive用法</h4><p>应用场景：我们在某一个筛选列表页面，需要点击进入列表的详情页，但是我们希望返回时，仍记录我们的选择项，此时我们可以采用keep-alive进行设置，对页面进行缓存，用法如下：</p>
+<blockquote>
+<p>在主页面使用router-view组件的app.vue中设置</p>
+</blockquote>
+<pre><code>&lt;keep-alive&gt;
+    &lt;router-view v-if=&quot;$route.meta.keepAlive&quot;&gt;&lt;/router-view&gt;
+&lt;/keep-alive&gt;
+&lt;router-view v-if=&quot;!$route.meta.keepAlive&quot;&gt;&lt;/router-view&gt;
+</code></pre><blockquote>
+<p>在router.js中配置你想进行缓存的页面路由</p>
+</blockquote>
+<pre><code>{
+  path: &apos;/page1&apos;, // 假设我们现在需要缓存的页面的名字叫做page1
+  name: &apos;Page1&apos;,
+  component: Page1,
+  meta: {
+    keepAlive: true // 需要被缓存
+  }
 }
 </code></pre>
       
@@ -672,7 +691,7 @@ methods: {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-this-router-go-0-重新刷新加载页面"><span class="nav-number">1.</span> <span class="nav-text">1. this.$router.go(0) 重新刷新加载页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天"><span class="nav-number">2.</span> <span class="nav-text">2. 使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-axios下关于put-get-delete-post请求的三种传参方式"><span class="nav-number">3.</span> <span class="nav-text">3. axios下关于put/get/delete/post请求的三种传参方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）get-put-delete-post关于path传参方式"><span class="nav-number">3.1.</span> <span class="nav-text">（1）get/put/delete/post关于path传参方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）get-put-delete-post关于body传参方式"><span class="nav-number">3.2.</span> <span class="nav-text">（2）get/put/delete/post关于body传参方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（3）get-put-delete-post关于query传参方式"><span class="nav-number">3.3.</span> <span class="nav-text">（3）get/put/delete/post关于query传参方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-bus-js实现兄弟之间组件通信（官方文档中只提供了父与子通信）"><span class="nav-number">4.</span> <span class="nav-text">4. bus.js实现兄弟之间组件通信（官方文档中只提供了父与子通信）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-this-router-go-0-重新刷新加载页面"><span class="nav-number">1.</span> <span class="nav-text">1. this.$router.go(0) 重新刷新加载页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天"><span class="nav-number">2.</span> <span class="nav-text">2. 使用element-ui的日期组件时，如果只是绑定v-model给日期组件，v-model接收的时间为正常时间-1天</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-axios下关于put-get-delete-post请求的三种传参方式"><span class="nav-number">3.</span> <span class="nav-text">3. axios下关于put/get/delete/post请求的三种传参方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）get-put-delete-post关于path传参方式"><span class="nav-number">3.1.</span> <span class="nav-text">（1）get/put/delete/post关于path传参方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）get-put-delete-post关于body传参方式"><span class="nav-number">3.2.</span> <span class="nav-text">（2）get/put/delete/post关于body传参方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（3）get-put-delete-post关于query传参方式"><span class="nav-number">3.3.</span> <span class="nav-text">（3）get/put/delete/post关于query传参方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-bus-js实现兄弟之间组件通信（官方文档中只提供了父与子通信）"><span class="nav-number">4.</span> <span class="nav-text">4. bus.js实现兄弟之间组件通信（官方文档中只提供了父与子通信）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-keep-alive用法"><span class="nav-number">5.</span> <span class="nav-text">5.keep-alive用法</span></a></li></ol></div>
             
 
           </div>
@@ -707,7 +726,7 @@ methods: {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.4k</span>
+    <span title="Site words total count">16.0k</span>
   
 </div>
 
@@ -734,7 +753,7 @@ methods: {
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">15.4k</span> 字
+      博客全站共： <span class="post-count">16.0k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
